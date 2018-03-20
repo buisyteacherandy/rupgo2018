@@ -1,0 +1,91 @@
+
+
+<footer>
+ <!-- <iframe class="animation-container" src='/logoanimacion/logoanimacion.html' frameborder="0"/> </iframe> -->
+ <div class="container container-footer">
+			
+			<div class="row main-rows">
+				<div class="col-md-3">
+				<div class="inner">
+						<%= link_to destinations_path do %>
+  						<%= image_tag "marca.png", :class => "logof" %>
+						<% end %>
+							<i class="fa fa-registered tmk" aria-hidden="true"></i>
+						<div class="tag_line">
+							Colombia Travel
+						</div>
+				</div>					
+				</div>
+				<div class="col-md-6">
+					<div class="col-md-12"><strong>Navigate</strong></div>
+					<hr class="style-one">
+					
+					<div class="row">
+						<div class="col-md-6">
+							<ul>
+					            <%= content_tag_for(:li, @regions) do |region| %>
+					            <%= link_to region.name,region %> 
+					            <% end %>
+				            </ul>
+						</div>
+						<div class="col-md-6">
+							<ul>
+								<% @categories.each do  |category| %> 
+								<li> 
+									<%= link_to category.name,category %> 
+									<% end -%>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-3">
+					<div class="col-md-12"><strong>Company</strong></div>
+					<hr class="style-one">
+					<ul>
+						<li><a href="">About US</a></li>
+						<li><a href="">Privacy Policy</a></li>
+						<li><a href="">Terms Of  Use</a></li>
+						<li><a href=""> Contact Us</a></li>
+					</ul>
+
+				</div>
+			</div> <!-- end row 1 -->
+
+		</div> <!-- container end 1 -->
+		
+
+		<div class="container container-footer">
+			
+			<div class="row main-rows social-row">
+			<hr>
+				<div class="col-md-3 iconss"><a href=""> <i class="fa fa-facebook-official fa-5x" aria-hidden="true"></i></a></div>
+				<div class="col-md-3 iconss"><a href=""> <i class="fa fa-instagram fa-5x" aria-hidden="true" ></i></a></div>
+				<div class="col-md-3 iconss"><a href=""> <i class="fa fa-twitter fa-5x" aria-hidden="true"></i></a></div>
+				<div class="col-md-3 iconss"><a href=""> <i class="fa fa-google-plus-official fa-5x" aria-hidden="true"></i></a></div>
+			</div>
+
+			</div>
+		<div class="container container-footer">
+		<div class="last-info">
+			<i class="fa fa-copyright" aria-hidden="true"></i> 
+			
+			<%= link_to destinations_path do %>
+  				<%= image_tag "marca.png", :class => "logofbootom" %>
+			<% end %>
+			<i class="fa fa-registered tmkbootom" aria-hidden="true"></i>
+			&nbsp; 2017 - All rights reserved.</div>
+
+			<div class="tk-allies"></div>
+			
+			</div>
+		
+	     
+
+
+                     
+
+</footer>
+

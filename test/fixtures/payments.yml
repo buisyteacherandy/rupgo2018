@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deal: one
+  user: one
+  state: 1
+
+two:
+  deal: two
+  user: two
+  state: 1

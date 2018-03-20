@@ -1,0 +1,22 @@
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
+          
+      <ul class="grid cs-style-3">
+        <li>
+          <figure>
+          <span class="coverdestine">
+          <h3><%= destination.place %></h3>
+          </span>
+            <%= image_tag destination.cover.url() %>
+            <figcaption>
+              
+              
+              <h3><%= link_to (t ".Know"), destination %></h3>
+
+
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+</div><!-- /container -->
+

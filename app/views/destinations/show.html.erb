@@ -1,0 +1,138 @@
+<div class="container destine-container">
+  <div id="destine">
+     
+  
+
+  <div class="field destineimg">
+    <h1>
+        <span class="bx"> 
+          <span class="tx"><%= @destination.place%></span>
+        </span>
+      </h1>
+      <%= image_tag @destination.cover.url() %>
+  </div>
+
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1"><%= t ".why_go" %></a></li>
+    <li><a href="#tabs-2"><%= t ".to_do" %></a></li>
+    <li><a href="#tabs-3"><%= t ".sights" %></a></li>
+    <li><a href="#tabs-4"><%= t ".festivals" %></a></li>
+    <li><a href="#tabs-5"><%= t ".sleep" %></a></li>
+    <li><a href="#tabs-6"><%= t ".eat" %></a></li>
+    <li><a href="#tabs-7"><%= t ".drink" %></a></li>
+    <li><a href="#tabs-8"><%= t ".shop" %></a></li>
+    <li><a href="#tabs-9"><%= t ".sightseeing" %></a></li>
+    <li><a href="#tabs-10"><%= t ".filter" %></a></li>
+  </ul>
+  <div id="tabs-1">
+    <%= @destination.why_go.html_safe  %>
+  </div>
+  <div id="tabs-2">
+    <%= @destination.to_do.html_safe %>
+  </div>
+  <div id="tabs-3">
+    <%= @destination.sights.html_safe %>
+  </div>
+  <div id="tabs-4">
+      <%= @destination.festivals.html_safe %>
+  </div>
+  <div id="tabs-5">
+     <%= @destination.sleep.html_safe %>
+  </div>
+  <div id="tabs-6">
+    <%= @destination.eat.html_safe %>
+  </div>
+  <div id="tabs-7">
+    <%= @destination.drink.html_safe %>
+  </div>
+  <div id="tabs-8">
+    <%= @destination.shop.html_safe %>
+  </div>
+  <div id="tabs-9">
+    <%= @destination.around.html_safe %>
+  </div>
+  <div id="tabs-10">
+    <%= @destination.filter %>
+  </div>
+
+</div> <!-- end of tabs -->
+</div>
+
+<div class="container-fluid nested-deals">
+      
+      <h1><%= t ".HotDeals" %></h1>
+      <div class="content">
+                
+        
+        <div class="gridd">
+        <% @destination.deals.each do |deal| %>
+          <figure class="effect-zoe">
+            <div class="deal-info">
+              
+              <div class="row name-deal">
+                <div class="col-md-12">
+                  <h1><%= deal.place %></h1>
+                </div>
+              </div>
+
+              <div class="row price-deal">
+                <div class="col-md-6 deal-position deal-price">
+                <h1><span><%= deal.currency %></span>&nbsp<%= deal.price %></h1>
+                <br>
+                <p><%= deal.policies_and_fees %></p>
+                  
+                </div>
+                <div class="col-md-6 deal-position deal-offert hidden-promo">
+                <h1><%= deal.other_details %></h1></div>
+              </div>
+
+            </div>
+            <%= image_tag deal.pic.url() %>
+            
+            <figcaption>
+              <h3><%= link_to deal.place, deal_path %></h3>
+              <div class="description"><%= deal.description.html_safe %></div>
+              <p class="icon-links">
+                  <%= link_to '<i class="fa fa-eye"></i>'.html_safe, deal_path(deal) %>
+                  <a href=""><i class="fa fa-list-alt" alt="Fees and Policies" aria-hidden="true"></i></a>
+              </p>
+              
+            </figcaption>     
+          </figure>
+          
+<%= link_to 'Edit', edit_destination_path(@destination) %> |
+<%= link_to 'Back', destinations_path %>
+          <%end%>
+
+
+        </div><!--  grid -->
+         
+        
+      </div> <!-- content -->
+      
+    </div><!-- /container --> 
+
+<div class="field">
+  <h3><%= t ".Comments" %></h3>
+
+<ul>
+    <% @destination.comments.each do |comment| %>
+    <li>
+    <%= comment.body %>
+    </li>
+  <% end %>
+  </ul>
+  <%= render "comments/form" %>
+</div>
+</div>
+<script>
+    $( function() {
+    $( "#tabs" ).tabs();
+  } );
+
+</script>
+
+
+

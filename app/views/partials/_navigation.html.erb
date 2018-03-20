@@ -1,0 +1,277 @@
+<header>
+
+  <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <%= link_to image_tag("marca.png"), destinations_path, :class=>"navbar-brand" %>
+      </div> <!-- navbar-header -->
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        
+       
+       
+
+        
+        
+          <!-- Search -->
+           
+          
+          <!-- Search end-->
+
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li class="itnav" id="colombia"><%= t ".colombia" %></li>
+          <li class="itnav"><%= link_to (t ".HotDeals"), deals_path %></li>
+        <% if user_signed_in? %>
+          <li class="itnav cart_icon">
+
+                       <%= link_to (t ".my_cart"), route_path %></li>
+          
+          
+        <% end -%>
+        
+
+        <li class="itnav"> 
+       <span> <%= link_to_unless_current image_tag("en.png"),:class => "active-en", locale: "en" %> </span> 
+        <span><%= link_to_unless_current image_tag("es.png"),:class => "active-es", locale: "es" %></span></li>
+          <li class="dropdown sign itnav">
+                            
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<span class="carret"></span></a>
+            <ul class="dropdown-menu signed">
+            <% if user_signed_in? %>
+
+              
+
+              <li><%= link_to (t ".My_routes"), buys_path %></li>
+              <li><%= link_to (t ".Close_session"), destroy_user_session_path, method: :delete %></li>
+               <% else %>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to (t ".Sign_in"), new_user_session_path %></li>
+              <!--  -->
+              <li><%= link_to (t ".Sign_in_Facebook"), user_omniauth_authorize_path(:facebook) %></li>
+              <li><%= link_to (t ".Create_account"), new_user_registration_path %></li>
+            <% end %>
+            </ul>
+          </li>
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+  
+    
+    <div id="mega_menu" class="no-list">
+        <div class="row">
+          
+          <div id="colombia-map" class="col-sm-3 col-md-3 ">
+              <ul>
+                
+                <li> <%= image_tag "and.png", :alt => "", :class => "filter img-responsive and" %></li>
+                <li> <%= image_tag "car.png", :alt => "", :class => "filter img-responsive car" %></li>
+                <li><%= image_tag "ins.png", :alt => "", :class => "filter img-responsive ins" %></li>
+                <li> <%= image_tag "amaz.png", :alt => "", :class => "filter img-responsive amaz" %></li>
+                <li><%= image_tag "gor.png", :alt => "", :class => "filter img-responsive gor" %></li>
+                <li><%= image_tag "pac.png", :alt => "", :class => "filter img-responsive pac" %></li>
+                <li><%= image_tag "ori.png", :alt => "", :class => "filter img-responsive ori" %></li>
+              </ul>
+            
+          </div> <!-- end of colombia -->
+
+          <div id="regions" class="column col-sm-6 col-md-3" >
+            <h3>Visit Our Natural Regions</h3>
+            <ul>
+            <%= content_tag_for(:li, @regions) do |region| %>
+            <%= link_to region.name,region %> 
+            <% end %>
+            </ul>
+          </div><!-- regions -->
+       
+          
+            
+          <div id="categories" class="column col-sm-6 col-md-6">
+            <ul>
+              <li>
+                <h3>Ready to get to Know Colombia?</h3>
+              </li>
+            </ul>
+
+            <br>
+            <ul>
+              <% @categories.each do  |category| %> 
+              <li class="col-xs-12 col-md-4 sm-4 category">
+                    
+              <%= link_to category.name,category, :class=>"categories_button"%> 
+              <div class="categories_cover">
+              <%= link_to category do %>
+              <%= image_tag category.catecover.url() %>
+              <% end %>
+              
+              </div>
+              </li> 
+              
+              <% end -%>
+            </ul>
+          </div> <!-- end categories -->
+        
+        </div> <!-- row -->
+        <!-- <div class="row bottom"> Active este cuando tenga contenido para msotrar debajo de el menu desplegable de este Megamenu -->
+          
+        </div>
+      
+    </div> <!-- mega menu -->
+    </div><!-- container-fluid -->
+  </nav>
+<script>
+      $(document).ready(function(){
+      $("#mega_menu").show();
+
+
+    });
+
+</script>
+  <!-- Roll Down Mega Menu script -->
+ <script>
+      $(document).ready(function(){
+      $("#mega_menu").hide();
+      
+      $(".sign").mouseenter(function(){
+      $(".signed").slideToggle("fast");
+      $("#mega_menu").slideUp("fast");
+        
+          });
+
+      $(".sign").mouseleave(function(){
+      $(".signed").slideUp("fast");
+
+          });
+
+      $("#colombia").mouseenter(function(){
+      $("#mega_menu").slideToggle("fast");
+      
+          });
+  
+      $("#colombia").click(function(){
+      $("#mega_menu").slideDown("fast");
+      
+          });
+      
+      $(".outmega").click(function(){
+      $("#mega_menu").slideUp("fast");
+          });
+      
+      $("#mega_menu").mouseleave(function(){
+      $("#mega_menu").slideUp("fast");
+          });
+   
+      });
+  </script>
+ 
+  <!--End Of Roll Down Mega Menu script -->
+
+<!-- Map Script -->
+
+  <script> 
+    $(document).ready(function () {
+  
+// Amazonas
+  $("#region_1 > a").mouseenter(function(){
+    $(".amaz").toggleClass("dropshadow", 0, "filter" )
+  });
+  $("#region_1 > a").mouseout(function(){
+    $(".amaz").toggleClass("dropshadow", 0, "filter" )
+  });
+
+// andina
+
+$("#region_2 > a").mouseenter(function(){
+    $(".and").toggleClass("dropshadow", 0, "filter" )
+  });
+  $("#region_2 > a").mouseout(function(){
+    $(".and").toggleClass("dropshadow", 0, "filter" )
+  });
+
+// pacifica
+
+$("#region_5 > a").mouseenter(function(){
+    $(".pac").toggleClass("dropshadow", 0, "filter" )
+  });
+  $("#region_5 > a").mouseout(function(){
+    $(".pac").toggleClass("dropshadow", 0, "filter" )
+  });
+
+
+// caribe
+
+$("#region_3 > a").mouseenter(function(){
+    $(".car").toggleClass("dropshadow", 0, "filter" )
+  });
+  $("#region_3 > a").mouseout(function(){
+    $(".car").toggleClass("dropshadow", 0, "filter" )
+  });
+
+// gorgona
+
+$("#gorgona").mouseenter(function(){
+    $(".gor").toggleClass("dropshadow", 0, "filter" )
+  });
+  $("#gorgona").mouseout(function(){
+    $(".gor").toggleClass("dropshadow", 0, "filter" )
+  });
+
+// San Andrés
+
+$("#region_6 > a").mouseenter(function(){
+    $(".ins").toggleClass("dropshadow", 0, "filter" )
+  });
+  $("#region_6 > a").mouseout(function(){
+    $(".ins").toggleClass("dropshadow", 0, "filter" )
+  });
+
+// Orinoquia
+
+$("#region_4 > a").mouseenter(function(){
+    $(".ori").toggleClass("dropshadow", 0, "filter" )
+  });
+  $("#region_4 > a").mouseout(function(){
+    $(".ori").toggleClass("dropshadow", 0, "filter" )
+  });
+
+})
+
+
+$(function () {
+  $(document).scroll(function () {
+    var $img = $(".img-regions");
+    var $nav = $(".navbar-fixed-top");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});
+  </script>
+
+  <script>
+    $document(ready(function () {
+      $(this).click(function () {
+        $()
+      })
+    }))
+  </script>
+  <script>
+    var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+
+   
+    
+    var random-colour =  $('body').css("background",hue);
+
+    $("")
+
+  </script>
+     
+  <!-- End of Map Script -->
+</header>

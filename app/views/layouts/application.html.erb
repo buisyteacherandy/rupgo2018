@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RupGo10</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'on' %>
+  
+  </head>
+<body>
+  
+
+  
+        <%= render "partials/navigation" %>
+  
+  
+  <% if notice %>
+      
+    <div class="notice alert alert-success"><h4><%= notice %></h4></div>
+      
+    <%end%>
+     
+  <% if alert %>
+    <div class="alert alert alert-info"><h4><%= alert %></h4></div>
+  <%end%>
+   
+   
+   
+      <%= yield %>
+
+      
+
+  <script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('.notice').slideUp();
+  }, 1200);
+ })
+</script>
+</body>
+<%= render "partials/footer" %>
+</html>

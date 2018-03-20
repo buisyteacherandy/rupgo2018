@@ -1,0 +1,961 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+}
+body{
+
+}
+
+.container-fluid{
+	width: 100%;
+	margin: 0;
+	padding: 0
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// importing partials
+
+
+@import "font-awesome";
+@import "codemirror";
+@import "summernote";
+@import "codemirror/themes/solarized";
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url(https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple);
+@import url('https://fonts.googleapis.com/css?family=Exo');
+
+// importing modules
+
+	// @import "bootstrap";
+	// @import "variables";
+	// @import "mixin";
+	// @import "base";
+	// @import "layout";
+
+/*#myCarousel{
+	display: none;
+}*/
+
+/*General h1*/
+h1{
+	font-family: 'Oswald', sans-serif !important;
+}
+
+
+// Styles for pops outs and forms
+.centerforms{
+	margin-top: 200px;
+	text-align: center;
+	 font-family: 'Open Sans Condensed', arial, sans;
+    width: 60%;
+    padding: 30px;
+    background: #FFFFFF;
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+
+// search machine
+	.searcher-rupgo{
+		width: 500px;
+		background: red;
+		border: 1px solid black;
+		position: absolute;
+		right: 0;
+		text-align: center;
+	}
+
+
+// end serch machine
+
+$megamenu: #f1f1f1;
+$links: white;
+
+.alert{
+	z-index: 9990;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	text-align: center;
+	
+}
+
+// End of styles for pops outs and forms
+
+
+body{
+	font-family: 'Oswald', sans-serif;
+
+}
+
+
+
+header nav ul li{
+	list-style: none;
+	text-decoration: none;
+	a{
+		color: white;
+		text-decoration: none;
+
+	}
+	li:hover{
+		text-decoration: underline;
+	}
+}
+
+.itnav a{
+	transition: all 0.5s
+}
+
+.itnav a:hover, .itnav a:focus{
+	background: transparent !important;
+	text-decoration: underline !important;
+	color: white
+}
+
+#myCarousel{
+	margin-top: -80px;
+
+}
+.item img{
+	width: 100%
+}
+
+
+
+.relative{
+	position:relative;	
+}
+/*
+.absolute{
+	position:absolute;	
+}
+.destination-height{
+	height:250px;
+}
+.background-cover{
+	background-position:center;
+	background-size:cover;
+}
+}*/
+.text-center{
+	text-align:center;
+
+}
+.destineimg{
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	background: black;
+	margin: 0;
+	padding: 0;
+	margin-top: 0;
+	box-sizing: content-box;
+	img{
+		width: 100%;
+		position: relative;
+	}
+}
+
+
+
+
+/*Navigation*/
+.navbar-fixed-top.scrolled {
+  background-color: rgba(0,0,0,0.8) !important;
+  transition: background-color 200ms linear;
+}
+
+
+.navbar{
+	z-index: 9999;
+	height: 72px;
+	background-color: rgba(0,0,0,0.9);
+    margin-bottom: 0px;
+}
+
+.navbar-right{
+	height: 72px
+}
+.navbar-right img{
+	margin-top: 10px
+}
+
+
+.navbar .container-fluid li{
+	line-height: 32px
+}
+
+.navbar .container-fluid a{
+	line-height: 32px
+}
+.nav #colombia{
+	padding: 15px 0 0 0;
+	color: white;
+
+}
+
+ 
+
+.sign
+
+.signed{
+	background-color: rgba(242,242,242,0.5);
+}
+
+
+#mega_menu{
+	width: 100%;
+	position:  absolute;
+	left: 0; 
+  	right: 0;
+  	padding: 20px;
+  	margin-left: auto; 
+  	margin-right: auto; 
+	display: none;
+	margin-top: 0;
+	z-index: 9998;	
+	box-shadow: 5px 5px 7px rgba(0,0,0,0.5);
+
+	background-color: rgba(0,0,0,0.5);
+	background-image: url(pattern.png);
+	background-repeat: repeat;
+	font-family: "Oswald"
+}
+
+.navbar-brand {
+	width: 200px;
+	
+	padding: 0 !important
+}
+.navbar-brand img{
+	width: 100%;
+	}
+#regions h3{
+	color: white;
+	
+	}			
+#regions li{
+	width: 100%;
+    display: inline-block;
+    color: white;
+    // background-color: rgba();
+    padding: 0 0 0 16px;
+    text-decoration: none;
+    top: 5px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.5s;
+	}
+
+#regions li:hover {
+	color: white;
+	background-color: #555;
+	border-bottom: 3px solid #598;
+	}
+#regions li a{
+	 text-decoration: none;
+     display: block;
+     width: 100%;
+     height:auto;
+	padding:10px 0;
+	transition: all 0.5s;
+}
+
+#regions li a:hover{
+	color: white
+}
+#colombia-map{
+	text-align: center;
+	
+
+}
+#colombia-map ul{
+	width: 100%;
+	height: auto;
+	position: relative;
+	padding: 0;
+	margin: 0	
+
+	
+	}
+
+#colombia-map ul li img{
+	position: absolute;
+	margin: 0 auto
+}
+
+.column{
+	border-right: 2px solid #eee
+}
+
+
+@media (max-width: 768px) {
+  #colombia-map {
+    display: none;
+  }
+}
+
+
+#categories{
+	margin-top: 0;
+	
+	padding-right: 5px;
+	text-align: center;
+	}
+#categories ul h3{
+	
+	color: white;
+	border-bottom: 1px olive solid
+}
+#categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+	}
+#ccategories_cover a{
+	padding: 0;
+	margin: 0;
+
+}
+#categories ul .categories_button{
+	width: 100%;
+    display: inline-block;
+    color: #fff;
+    background-color: #559;
+    padding: 8px 16px;
+    text-decoration: none;
+    top: 5px;
+    border-bottom: 3px solid transparent
+	}
+#categories ul .categories_button:hover {
+	color: white;
+    background-color: #555;
+	border-bottom: 3px solid #598
+ 	}
+
+ #categories ul li{
+ 	margin-top: 10px
+ }
+ #categories .categories_cover{
+ 	overflow: hidden;
+ 	height: 75px;
+ }
+#categories .categories_cover img{
+	width: 100%;
+
+
+	-webkit-transition: 1s linear;
+  	transition: 1s linear;
+}
+
+
+#categories .categories_cover img:hover{
+	-webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+// Classes to add Map
+.filter{
+	filter: grayscale(1);
+	-moz-filter: grayscale(1); 
+	-webkit-filter: grayscale(1); 
+	-o-filter: grayscale(1); 
+}
+.dropshadow{
+	filter: drop-shadow(3px 3px 10px black)hue-rotate(75deg);
+	-moz-filter: drop-shadow(3px 3px 10px black)hue-rotate(75deg);
+	-webkit-filter: drop-shadow(3px 3px 10px black)hue-rotate(75deg);
+	-o-filter: drop-shadow(3px 3px 10px black)hue-rotate(75deg);
+	z-index: 9999;
+
+}
+
+
+@media (max-width: 1100px) {
+  #mega_menu {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+/*End Navigation*/
+
+
+
+#prueba{
+	background: 100%;
+	width: 100%;
+	text-align: center;
+	background: orange;
+	margin-top: 10px;
+	color: white;
+}
+
+
+
+.container{
+	
+	width: 90%;
+	// background-color: #C9D0DA;
+	margin: 0 auto;
+
+}
+.destine-container{
+	margin-top: 100px;
+	width: 100% !important
+}
+
+
+.tag{
+
+}
+h1{
+	font-size: 2em;
+	font-weight: 400;
+	z-index: 5;
+	line-height: 1.5;
+	
+}
+
+
+.bx{
+	margin-top: 15px;
+	background-image: url(bx.png);
+	
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	padding-bottom: 10px;
+	margin-left: -10px;
+	position: absolute;
+	z-index: 999
+}
+
+.bx .tx{
+	
+	padding: 4px 10px;
+	display: inline-block;
+	background-color: #5F8B02;
+	color: #fff;
+	line-height: 125%;
+	box-shadow: 5px 5px 5px	rgba(0,0,0,0.5);
+	
+	z-index: 998
+}
+
+#destine{
+	padding: 0;
+	background-color: gray
+}
+
+.coverdestine{
+	width: 100%;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	z-index: 999;
+
+	text-align: right;
+	bottom: 0;
+	padding-right: 10px; 
+}
+
+.coverdestine h3 {
+	color: white;
+
+}
+
+
+
+.main-destines-index{
+	margin-top: -120px;
+	font-family: "Exo 2";
+	font-weight: 900;
+	
+}
+
+.main-des-in{
+	text-align: center;
+}
+/*prevent behaves wrongly*/
+.col-md-3, .col-sm-4, .col-xs-6, {
+	padding: 0 !important;
+	margin: 0;
+	
+}
+
+
+
+// Styles footer
+
+// static version
+footer{
+	background: #646464;
+	padding: 25px 0 0 0;
+	position: fixed bottom;
+	width: 100%;
+	-moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+}
+
+
+footer a{
+	text-decoration: none;
+	color: white !important
+}
+.container{
+			
+	width: 100%
+}
+
+.main-rows{
+	width: 80%;
+	margin: 0 auto !important;
+	 
+}
+.social-row{
+	margin-top: 20px;
+	width: 40%;
+}
+.inner{
+	padding: 15px 0 0 0
+}
+.tmk{
+	font-size: .8em;
+    
+    vertical-align: top;
+    line-height: 38px;
+    position: relative;
+    top: -10px;
+    left: 0;
+    font-weight: 300;
+}
+
+.tmkbootom{
+	font-size: .5em !important;
+    vertical-align: top;
+    line-height: 28px !important;
+    position: relative;
+    top: -10px;
+    left: 0;
+    font-weight: 300;
+}
+
+.logof{
+	width: 50%
+}
+.logofbootom{
+	width: 65px
+}
+.tag_line{
+	 
+	font-size: .93em;
+    font-weight: 400;
+    opacity: .8;
+    position: relative;
+    top: -7px;
+    
+}
+
+ul{
+	padding: 0
+}
+li{
+	list-style: none;
+	text-align: left;
+	padding: 0
+}
+.iconss{
+	text-align: center;
+}
+.iconss i{
+	
+	color: #D9D384;
+	transition: all 0.2s
+	 
+}
+
+.iconss i:hover{
+	color: #CCCED9;
+
+}
+.last-info{
+	text-align: center !important;
+	padding: 25px 0 0 0
+}
+
+/* Gradient color1 - color2 - color1 */
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #CCC, #646464, #646464);
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #CCC, #000, #CCC);
+}
+
+// static version End
+
+
+
+// end styles Footer
+
+// Hot Deals  version styles
+
+
+
+// end of Hot Deals Version Styles
+
+
+// animation
+
+
+
+// Elemento en Carousel estilos 
+// .carousel-h1{
+// 	position: absolute;
+// 	right: 50px;
+// 	bottom: 20px
+// }
+
+
+
+// medias queries
+
+@media screen and (max-width: 768px){
+.main-destines-index{
+	margin-top: 25px
+}
+.grid {
+    padding: 0;
+}
+.grid li{
+	padding: 15px 0
+}
+body{
+	margin: 0;
+	padding: 0;
+
+}
+ }
+
+/* general styles for Regions */
+
+.img-regions{
+	height: 300px;
+	// margin-bottom: 150px;
+	text-align: center;
+	line-height: 150px;
+	background-position: center;
+	
+	
+
+}
+
+.img-regions img{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.img-regions h2{
+	font-family: "Rancho"; 
+	 font-size: 72px; 
+	 color: white;
+	 line-height: 300px
+
+}
+
+
+/* general styles for Regions END*/
+/*styles deals options 2 */
+
+.nested-deals{
+	background: black
+}
+.main-row{
+	padding: 0;
+	margin: 0 auto;
+	box-sizing: border-box;
+	font-family: 'Oswald', sans-serif;
+	
+
+
+}
+.btn-group a{
+	color: white !important
+}
+
+.options2 .deal-box{
+	margin-bottom: 35px
+}
+
+
+
+.deal2-price{
+	
+	position: absolute;
+	bottom: 25px;
+	left: 25px;
+	font-size: 4em;
+	color: #FBF3ED;
+	text-shadow: 2px 2px 1px rgba(0,0,0,0.4);
+}
+
+.deal2-promo{
+	box-shadow: 1px 1px 7px 2px rgba(0,0,0,0.4);
+	overflow: hidden;
+	color: white;
+	display: block;
+	width: 190px;
+	height: 60px;
+	background-color: orange;
+	// -ms-transform: rotate(45deg);
+	// -webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	position:absolute ;
+	text-align: center;
+	line-height: 69px;
+	right: -71px;
+	top: -10px;
+	font-family: exo2;
+	font-size: 22px;
+	font-weight: 900
+
+}
+.deal2-img{
+	position: relative;
+}
+
+.description h1{
+	font-weight: bold
+}
+// end styles deals options 2
+
+// deals index option 3
+
+// #imgs{
+// 	display: inline-flex;
+// 	overflow: hidden;
+// }
+// #imgs img{
+// 	max-width: 100%;
+// 	height: auto;
+// 	display: block;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// 	vertical-align: middle;
+// 	border: 0;
+// 	box-sizing: border-box
+// }
+.thumbnail{
+	overflow: hidden;
+	transition: all 0.5s ease-in-out;
+}
+
+// .thumbnail:hover:after{
+// 	position: absolute;
+// 	content: '';
+// 	background: rgba(192,227,232, 0.8) url(../images/scroll.png) no-repeat center center;
+// 	width: 80px;
+// 	height: 80px;
+// 	top: 35%;
+// 	left: 50%;
+// 	margin: -75px 0 0 -35px;
+// 	border-radius: 50%;
+// 	z-index: 1000;
+// }
+
+.thumbnail img{
+	transition: all 0.3s ease-in-out;
+}
+
+.thumbnail img:hover{
+	transform: scale(1.1) ;
+	filter: brightness(50%)
+}
+
+// end deals index option 3
+
+// Deal Show
+.breadcrumb li + li:before{
+	content: " | " !important;
+	margin: 0 auto
+}
+#place-img-reservation #price .col-md-12{
+	text-align: right;
+	height: 50px;
+	margin-bottom: 15px;
+	right: 55px
+}
+#place-img-reservation #price .col-md-12 span{
+	font-size: 0.65em;
+	background: green
+}
+
+#deal-img-reservation{
+	width: 90%;
+	border:1px solid rgba(144,164,171,0.2);
+	box-shadow: inset 0px 0px 2px ;
+	margin: 0 auto;
+
+}
+#inner-reservation-hotdeal{
+	margin-top: 20%;
+	
+	background: #2971e5 !important;
+	padding: 25px;
+
+}
+#buy-now{
+	
+}
+#buy-now{
+	color: white;
+	
+	text-align: center
+}
+#buy-now {
+	font-size: 2em !important;
+}
+#specification-deal{
+	width: 90%;
+	margin: 0 auto
+}
+#accordion{
+	margin-top: 10px
+}
+.panel-heading_proper{
+	background-color:  rgb(41,113,229) !important;
+	height: 4em;
+	border-radius: 0px !important;
+
+	
+}
+.panel-heading_proper a{
+	text-decoration: none;
+	font-size: 2em !important;
+	color: white !important;
+	font-weight: 900 !important
+}
+
+.actions{
+	text-align: center;
+}
+
+.media{
+	padding: 5px !important;
+	margin: 10px !important;
+	background-color: rgb(240,240,240);
+	border: 1px rgba(201,201,201,0.8);
+	box-shadow: 0 0 3px rgba(201,201,201,1);
+}
+// end Deal Show
+
+
+
+// regions
+
+
+
+
+// deals-carousel
+.deal-carousel{
+	height: 400px;
+
+}
+
+/*cart*/
+.main_cart{
+	width: 80%;
+	margin: 0 auto;
+	
+	
+	position: relative;
+
+}
+
+.main_cart .row{
+	background: #E3F2FD;
+	height: 230px;
+	border: 2px dashed rgba(0,0,0,0.5);
+	margin-top: 4px
+}
+.payment_img{
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	height: inherit;
+	
+
+}
+
+.payment_img img{
+	width: 100%;
+	margin: 0
+}
+
+.cart_button{
+
+}
+
+/*from navidation cart counter*/
+#item-counter {
+  position: absolute;
+  display: none;
+  top: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  text-align: center;
+}
+.cart_icon{
+	position: relative;
+}
+.cart_icon:before{
+	content: "\f07a";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #fff;
+    font-size: 18px;
+    padding-right: 0.5em !important;;
+    position: absolute;
+    top: 12px;
+    left: -6px;
+
+}
+
+/*cart end*/

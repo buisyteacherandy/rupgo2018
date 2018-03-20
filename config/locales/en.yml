@@ -1,0 +1,86 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  deals:
+    index:
+      place: "Place"
+      description: "Description"
+      details: "Details"
+      other_details: "Other details"
+      policies_and_fees: "Policies and fees"
+      price: "Price"
+      category: "Category"
+    show:
+      description: "Description"
+      details: "Details"
+      other_details: "Other details"
+      policies_and_fees: "Policies and fees"
+      price: "Price"
+      questions: "Questions and answers about this trip"
+  partials:
+    navigation:
+      colombia: "GET TO KNOW COLOMBIA"
+      account: "ACCOUNT"
+      my_cart: "MY CART"
+      HotDeals: "HOTDEALS"
+      dropdown: "DROPDOWN"
+      My_routes: "My routes"
+      Close_session: "Close Session"
+      Sign_in: "Sign In"
+      Sign_in_Facebook: "Sign in with Facebook"
+      Create_account: "Create Account"
+      Language: "Language"
+  payments:
+    form:
+      travellers: "Travellers"
+      check_in: "Check in"
+      check_out: "Check out"
+    route:
+      my_cart: "My cart"
+      travellers: "Travellers"
+      check_in: "Check in"
+      check_out: "Check out"
+      remove: "Remove"
+      pay: "Pay"
+  destinations:
+    show:
+      why_go: "Why Go"
+      to_do: "To do"
+      sights: "Sights"
+      festivals: "Festivals"
+      sleep: "Sleep"
+      eat: "Eat"
+      drink: "Drink"
+      shop: "Shop"
+      sightseeing: "Sightseeing"
+      filter: "Filter"
+      HotDeals: "HotDeals"
+      Comments: "Comments"
+    destination:
+      Know: "Get to Know"
+
+
+
+
+
+
+      

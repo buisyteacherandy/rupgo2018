@@ -1,0 +1,95 @@
+<h1>Search result</h1>
+<p><%= link_to 'back', new_search_path %></p>
+
+<% if @search.search_destinations.empty? %>
+
+	<p>No records found</p>
+
+	<% else %>
+
+		<% @search.search_destinations.each do |c| %>
+			<br>
+
+<p id="notice"><%= notice %></p>
+<div id="container">
+  <div id="destine">
+     <h1>
+        <span class="bx"> 
+          <span class="tx"><%= c.place %></span>
+        </span>
+      </h1>
+  </div>
+		
+	<div class="field destineimg">
+      <%= image_tag c.cover.url(:thumb) %>
+  </div>
+
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1"><%= t ".why_go" %></a></li>
+    <li><a href="#tabs-2"><%= t ".to_do" %></a></li>
+    <li><a href="#tabs-3"><%= t ".sights" %></a></li>
+    <li><a href="#tabs-4"><%= t ".festivals" %></a></li>
+    <li><a href="#tabs-5"><%= t ".sleep" %></a></li>
+    <li><a href="#tabs-6"><%= t ".eat" %></a></li>
+    <li><a href="#tabs-7"><%= t ".drink" %></a></li>
+    <li><a href="#tabs-8"><%= t ".shop" %></a></li>
+    <li><a href="#tabs-9"><%= t ".sightseeing" %></a></li>
+    <li><a href="#tabs-10"><%= t ".category" %></a></li>
+  </ul>
+  <div id="tabs-1">
+    <%= c.why_go.html_safe  %>
+  </div>
+  <div id="tabs-2">
+    <%= c.to_do.html_safe %>
+  </div>
+  <div id="tabs-3">
+    <%= c.sights.html_safe %>
+  </div>
+  <div id="tabs-4">
+      <%= c.festivals.html_safe %>
+  </div>
+  <div id="tabs-5">
+     <%= c.sleep.html_safe %>
+  </div>
+  <div id="tabs-6">
+    <%= c.eat.html_safe%>
+  </div>
+  <div id="tabs-7">
+    <%= c.drink.html_safe %>
+  </div>
+  <div id="tabs-8">
+    <%= c.shop.html_safe %>
+  </div>
+  <div id="tabs-9">
+    <%= c.around.html_safe %>
+  </div>
+
+</div> <!-- end of tabs -->
+
+	<% end -%>
+
+<% end -%>
+
+<% if @search.search_deals.empty? %>
+
+	<p>No records found</p>
+
+	<% else %>
+
+		<% @search.search_deals.each do |d| %>
+			<br>
+	
+		<h1><%= d.place %></h1>
+		<p>Price: $<%= d.price %></p>
+	<% end -%>
+
+<% end -%>
+
+<script>
+    $( function() {
+    $( "#tabs" ).tabs();
+  } );
+
+</script>

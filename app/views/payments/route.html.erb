@@ -1,0 +1,65 @@
+<% running_total = 0 %>
+<div class="centerforms">
+<h1 ><%= t ".My_Cart" %></h1>
+
+
+
+
+<div class="main_cart">
+	
+	<div class="inner_cart">
+			<% @payments.each do |payment| %>
+			<div class="row">
+				<div class="col-md-4 payment_img" style="background:url(<%= payment.deal.pic.url() %>);background-repeat: no-repeat; background-position: center center;
+	background-size: cover; "> 
+
+					<div class="inner"><h4><%= payment.deal.place%></h4></div>
+					
+						
+				</div>
+				<div class="col-md-4">
+					<h4><%= payment.deal.place%></h4><br>
+					<strong><%= t ".travellers" %></strong>
+		 			<%= payment.quantity %><br>
+		 			<strong><%= t ".check_in" %></strong>
+		 			<%= payment.check_in %><br>
+		 			<strong><%= t ".check_out" %></strong>
+					<%= payment.check_out %><br>
+				</div>
+				<div class="col-md-4 text-center cart_button">
+					<h4><%= "$#{payment.deal.price * payment.quantity}USD" unless payment.deal.price.nil? %></h4>
+
+					<div class="text-center cart_button" data-no-turbolinks>
+						<%= link_to(@route, method: :delete, class: "btn btn-danger") do %>
+					<i class="fa fa-money"></i><%= t ".remove" %>
+						<% running_total = running_total + (payment.deal.price * payment.quantity) %>
+						<%end%>
+					</div>
+					
+				</div>
+			</div>
+			<%end%>
+	</div>
+	
+</div>
+
+
+
+			
+
+
+
+
+ 
+
+<div class="text-center">
+	<h3>Total: $<%= running_total %>USD</h3>
+</div>
+
+<div class="text-center" data-no-turbolinks>
+	<%= link_to(payments_express_path, class: "btn btn-success btn-lg") do %>
+		<i class="fa fa-money"></i><%= t ".pay" %>
+
+	<%end%>
+</div>
+</div>

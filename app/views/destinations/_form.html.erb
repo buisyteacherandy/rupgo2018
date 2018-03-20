@@ -1,0 +1,99 @@
+
+<%= simple_form_for(@destination) do |f| %>
+
+<% if destination.errors.any? %>
+<div class="centerforms">
+    <div id="error_explanation">
+      <h2><%= pluralize(destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
+
+      <ul>
+      <% destination.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+ <% end %>
+
+  <div class="field">
+    <%= f.label :place %>
+    <%= f.text_area :place%>
+  </div>
+
+<div class="field">
+    <%= f.input :why_go, as: :summernote %>
+</div>
+
+  <div class="field">
+    <%= f.input :to_do, as: :summernote %>
+  </div>
+
+  <div class="field">
+    <%= f.input :sights, as: :summernote %>
+  </div>
+
+  <div class="field">
+    <%= f.input :festivals, as: :summernote %>
+  </div>
+
+  <div class="field">
+    <%= f.input :sleep, as: :summernote %>
+  </div>
+
+  <div class="field">
+    <%= f.input :eat, as: :summernote %>
+  </div>
+
+  <div class="field">
+    <%= f.input :drink, as: :summernote %>
+  </div>
+
+  <div class="field">
+    <%= f.input :shop, as: :summernote %>
+  </div>
+
+  <div class="field">
+    <%= f.input :around, as: :summernote %>
+  </div>
+
+  <div class="field">
+    <%= f.label :filter %>
+    <%= f.text_area :filter %>
+  </div>
+
+  <div class="field">
+    Fotos: <%= f.file_field :cover %>
+  </div>
+  <div class="field">
+    <label> Categories</label>
+      <% @categories.each do |category| %>
+      <div class="field">
+        <%= check_box_tag "[categories[]", category.id %> <%= category.name %>
+      </div>
+        
+    <% end -%>
+  </div>
+  
+  <div class="field">
+    <label> Regions</label>
+      <% @regions.each do |region| %>
+      <div class="field">
+        <%= check_box_tag "[regions[]", region.id %> <%= region.name %>
+      </div>
+        
+    <% end -%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#summernote').summernote();
+  });
+</script>
+

@@ -1,0 +1,204 @@
+<br>
+<br>
+<br>
+<br>
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+ 
+    <nav class="breadcrumb">
+      <li><%= link_to "Home", destinations_path, :class => "breadcrumb-item" %> </li>
+      <li><%= link_to "Hot Deals", deals_path, :class => "breadcrumb-item" %> </li>
+      <li><span class="breadcrumb-item active">Check Hot Deal</span></li>
+          
+    </nav>
+  
+  <div id="place-img-reservation" class="row">
+    <div id="price" class="row">
+      <div class="col-md-12">
+      <h1>Just For &nbsp <%= @deal.currency %> &nbsp<%= @deal.price %></h1>
+      </div>
+    </div>
+    <div id="deal-img-reservation" class="row">
+
+      <div class="col-md-8">  <!--imgs deals -->
+      <div id="inner-deal-img">
+      <div id="deal-name">
+        <h1><%= @deal.place %></h1>
+
+      </div>
+        
+        <div class="owl-carousel owl-theme">
+            
+            <div class="item">
+              
+              <div class="deal2-img">
+                
+                <div class="deal2-promo ">
+                <%= @deal.other_details %>
+                </div>
+                
+                <%= image_tag @deal.pic.url() %>
+              </div> <!-- deal2-img -->
+
+            </div> <!-- item -->
+            <div class="item">
+              
+              <div class="deal2-img">
+                
+                <div class="deal2-promo ">
+                <%= @deal.other_details %>
+                </div>
+                
+                <%= image_tag @deal.pic1.url() %>
+              </div> <!-- deal2-img -->
+              
+            </div> <!-- item -->
+            <div class="item">
+              <%= @deal.video_deal.html_safe %>
+            </div>
+
+          </div><!--  owl theme -->
+      
+      </div><!--  inner-deal-img -->
+
+      </div> <!-- col-md-6 -->
+      
+      <div id="reservation-hotdeal" class="col-md-4">
+        <div id="inner-reservation-hotdeal">
+          <div id="buy-now">
+            <h3>Book Now</h3>
+          </div>
+          <br> <!-- pilas con este break...es temporal -->
+          <div id="reservation">
+            <% if !user_signed_in? %>
+              <%= render "payments/form", payment: Payment.new, deal: @deal %>
+              <% end %>
+
+
+              <% if user_signed_in? %>
+               <% if @deal.user_already_paid? current_user.id %>
+              <% else %> 
+                <%= render "payments/form", payment: Payment.new, deal: @deal %>
+              <% end %>
+            <% end %>
+            <span><p>
+  <strong><%= t ".category" %>:</strong>
+  <%= @deal.category %>
+</p></span>
+          </div>
+        </div>
+      </div><!--  reservation-hotdeal -->
+    </div><!-- deal-img-reservation -->
+  </div><!-- place-img-reservation End-->
+  <div id="specification-deal">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" data-parent="false">
+  <div class="panel panel-default">
+    <div class="panel-heading panel-heading_proper" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <%= t ".description" %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <%= @deal.description.html_safe  %>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading panel-heading_proper" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <%= t ".policies_and_fees" %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+      
+        <%= @deal.policies_and_fees %>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading panel-heading_proper" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <%= t ".questions" %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+      
+        <% @deal.questions.each do |question| %>
+        <div class="media">
+        
+          <div class="media-left">
+           
+       <%= image_tag "avatar.jpeg", :alt => "", :class => "media-object avatar-rupgo-question_deal" %>
+            
+          </div>
+  <div class="media-body">
+    <h4 class="media-heading">Question Made By!!...</h4>
+    <%= question.body %>
+  </div>
+
+</div>
+      <% end %>  
+       
+        <%= render "questions/form" %>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+  </div>
+
+<%= link_to 'Back', deals_path %>
+</div> <!-- end Container fluid -->
+
+<script>
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:false,
+    dots: true,
+    stagePadding: 0,
+    
+    lazyLoad: true,
+    
+    video: true,
+    
+    
+
+    
+    
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+     
+
+</script>
+
+
+
+
+
+
+
+
+
+

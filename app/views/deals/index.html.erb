@@ -1,0 +1,58 @@
+
+
+<div class="img-deals">
+  
+  <h2>Hot Deals!!</h2>
+
+<p id="notice alert"><%= notice %></p>
+</div>
+
+
+
+<div class="container-fluid options2">
+    <nav class="breadcrumb">
+      <li><%= link_to "Home", destinations_path, :class => "breadcrumb-item" %> </li>
+      <li><span class="breadcrumb-item active">Hot Deals</span></li>
+    </nav>
+  <div class="row main-rows">
+
+ <%= render @deals %> 
+ </div>  
+</div> <!-- container -->
+<!-- <script>
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+      // For Demo purposes only (show hover effect on mobile devices)
+      [].slice.call( document.querySelectorAll('a[href="#"') ).forEach( function(el) {
+        el.addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+      } );
+
+
+</script> -->
+
+<hr class="style-two">
+<% if signed_in? && current_user.is_admin? %>
+            
+            <button type="button" class="btn btn-warning"><%= link_to 'New Deal', new_deal_path %></button>
+            
+          
+               <% else %>
+          <div class="nothing"></div>
+            <% end %>
+
+</div>

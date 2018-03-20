@@ -1,0 +1,26 @@
+<h1>Advanced search</h1>
+
+<%= form_for @search, html: {class: "centerforms"} do |s| %>
+
+	<div class="field">
+		<%= s.label :keywords %><br />
+		<%= s.text_field :keywords %>
+	</div>
+
+	<div class="field">
+		<%= s.label :category %><br />
+		<%= s.select :category, options_for_select(@category,@filter), :include_blank => true%>
+	</div>
+
+	<div class="field">
+		<p><%= s.label :min_price, "Min Price" %> - <%= s.text_field :min_price, size: 10 %></p>
+		<p><%= s.label :max_price, "Max Price" %> - <%= s.text_field :max_price, size: 10 %></p>
+	</div>
+
+	<div class="actions"><%= s.submit "Search", class: "pure-buttom pure-buttom-primary" %></div>
+	
+	
+
+<% end %>
+
+<p><%= link_to 'Back', destinations_path %></p>

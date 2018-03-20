@@ -1,0 +1,26 @@
+
+<p id="notice"><%= notice %></p>
+<!-- <div class="img-regions">
+  <%= image_tag @region.rcover.url() %>
+  
+</div> -->
+
+<div class="img-regions" style="background:url(<%= @region.rcover.url() %>);margin-top:-80px;left:0px;width:100%;background-repeat: no-repeat; background-position: center center;
+	background-size: cover;line-height: 150px">
+	<h2><%= @region.name %></h2>
+     </div>
+
+
+<div class="container-fluid">
+	
+
+	
+
+	<div class="row">
+	     <%= render @region.destinations %>  
+	</div>
+
+
+	
+	<%= link_to 'Back', destinations_path %>
+</div>     
