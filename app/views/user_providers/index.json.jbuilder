@@ -1,0 +1,1 @@
+json.array! @user_providers, partial: 'user_providers/user_provider', as: :user_provider

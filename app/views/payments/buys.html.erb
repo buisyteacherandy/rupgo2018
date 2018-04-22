@@ -1,37 +1,35 @@
+
 <div class="centerforms">
 
-<h1><i class="fa fa-shopping-cart"></i>My Routes </h1>
-<div class="main_cart">
-	
-	<div class="inner_cart">
-			<% @payments.each do |payment| %>
-			<div class="row">
-				<div class="col-md-4 payment_img" style="background:url(<%= payment.deal.pic.url() %>);background-repeat: no-repeat; background-position: center center;
-	background-size: cover; "> 
-
-					<div class="inner"><h4><%= payment.deal.place%></h4></div>
-					
-						
-				</div>
-				<div class="col-md-4">
-					<h4><%= payment.deal.place%></h4><br>
-					<strong><%= t ".travellers" %></strong>
-		 			<%= payment.quantity %><br>
-		 			<strong><%= t ".check_in" %></strong>
-		 			<%= payment.check_in %><br>
-		 			<strong><%= t ".check_out" %></strong>
-					<%= payment.check_out %><br>
-				</div>
-				<div class="col-md-4 text-center cart_button">
-					<h4><%= "$#{payment.deal.price * payment.quantity}USD" unless payment.deal.price.nil? %></h4>
-
-					<div class="text-center cart_button" data-no-turbolinks>
+	<h1><i class="fa fa-shopping-cart"></i><%= t ".my_routes" %></h1>
+		<div class="main_cart">
+			<div class="inner_cart">
+				<% @payments.each do |payment| %>
+				<div class="row">
+					<div class="col-md-4 payment_img" style="background:url(<%= payment.deal.pic.url() %>);background-repeat: no-repeat; background-position: center center;background-size: cover; ">
+						<div class="inner"><h4><%= payment.deal.place%></h4>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<h4><%= payment.deal.place%></h4>
+						<br>
+						<strong><%= t ".travellers" %></strong>
+						<%= payment.quantity %>
+						<br>
+						<strong><%= t ".daterange" %></strong>
+						<%= payment.daterange %>
+						<br>
 						
 					</div>
-					
+					<div class="col-md-4 text-center cart_button">
+						<h4><%= "$#{payment.total}USD" unless payment.deal.price.nil? %></h4>
+						<div class="text-center cart_button" data-no-turbolinks>
+						</div>
+					</div>
 				</div>
-			</div>
-			<%end%>
-	</div>
-	
+				<%end%>
+			</div>				
+		</div>
 </div>
+</div> <!--This Div doesn't have an opening tag, However, it is set here to adjust the footer's view -->
+

@@ -28,7 +28,10 @@ en:
       other_details: "Other details"
       policies_and_fees: "Policies and fees"
       price: "Price"
-      category: "Category"
+      outlet: "The best tourism Hot Deals!!"
+      hotdeals: "Hot Deals"
+    deal:
+      apply: "Add to cart"
     show:
       description: "Description"
       details: "Details"
@@ -36,6 +39,12 @@ en:
       policies_and_fees: "Policies and fees"
       price: "Price"
       questions: "Questions and answers about this trip"
+      HotDeals: "Hot Deals"
+      check: "Check HotDeal"
+      book: "Book Now"
+      just_for: "Just For"
+      question: "Question Made By!!..."
+      back: "Back"
   partials:
     navigation:
       colombia: "GET TO KNOW COLOMBIA"
@@ -47,20 +56,35 @@ en:
       Close_session: "Close Session"
       Sign_in: "Sign In"
       Sign_in_Facebook: "Sign in with Facebook"
+      Sign_in_Google: "Sing in with Google"
+      Edit_User: "Edit Account"
       Create_account: "Create Account"
       Language: "Language"
+      Visit: "Visit Our Natural Regions"
+      Ready: "Ready to get to Know Colombia?"
+    footer:
+      Navigate: "Navigate"
+      Company: "Company"
+      About: "About US"
+      Privacy: "Privacy Policy"
+      Terms: "Terms Of  Use"
+      Contact: "Contact Us"
   payments:
     form:
       travellers: "Travellers"
-      check_in: "Check in"
-      check_out: "Check out"
+      daterange: "Select Check in - Check out"
+      pay: "Payment"
+      add: "Add to cart"
     route:
       my_cart: "My cart"
       travellers: "Travellers"
-      check_in: "Check in"
-      check_out: "Check out"
+      daterange: "Dates:"
       remove: "Remove"
       pay: "Pay"
+    buys:
+      my_routes: "My Routes"
+      travellers: "Travellers"
+      daterange: "Dates:" 
   destinations:
     show:
       why_go: "Why Go"
@@ -77,10 +101,56 @@ en:
       Comments: "Comments"
     destination:
       Know: "Get to Know"
+  comments:
+    form:
+      comment: "Create Comment"
+  questions:
+    form:
+      question: "Create Question"
+  regions:
+    show:
+      back: "Back"
+  devise:
+    confirmations:
+      new: 
+        Resend: "Resend confirmation instructions" 
+    sessions:
+      new:
+        log_in: "Log in"
+    shared:
+      links:
+        Log_in: "Log in" 
+        Sign_up: "Sign up"
+        Forgot: "Forgot your password?" 
+    passwords:
+      edit:
+        Change: "Change your password"
+      new:
+        forgot: "Forgot your password?"
+        send: "Send me reset password instructions"
+    registrations:
+      new:
+        Create_account: "Create Account"
+        Sign_up: "Sign up"
+      edit:
+        Edit: "Edit"
+        leave: "(leave blank if you don't want to change it)"
+        confirm: "(we need your current password to confirm your changes)"
+        Currently: "Currently waiting confirmation for:"
+        Update: "Update"
+        Cancel: "Cancel my account"
+        Unhappy: "Unhappy?"
+        sure: "Are you sure?"
+        Back: "Back"
+    unlocks:
+      new:
+        Resend: "Resend unlock instructions"
+  activerecord:
+    attributes:
+      devise:
+        registrations:
+          new:
+            first_name: "First Name"
 
+        
 
-
-
-
-
-      

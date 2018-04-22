@@ -1,8 +1,9 @@
-
+<div class="centerforms">
+  <h1>New Destination</h1>
 <%= simple_form_for(@destination) do |f| %>
 
 <% if destination.errors.any? %>
-<div class="centerforms">
+
     <div id="error_explanation">
       <h2><%= pluralize(destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
 
@@ -19,9 +20,9 @@
     <%= f.text_area :place%>
   </div>
 
-<div class="field">
-    <%= f.input :why_go, as: :summernote %>
-</div>
+  <div class="field">
+      <%= f.input :why_go, as: :summernote %>
+  </div>
 
   <div class="field">
     <%= f.input :to_do, as: :summernote %>
@@ -54,11 +55,10 @@
   <div class="field">
     <%= f.input :around, as: :summernote %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :filter %>
-    <%= f.text_area :filter %>
-  </div>
+<div class="centerforms">
+  
 
   <div class="field">
     Fotos: <%= f.file_field :cover %>
@@ -96,4 +96,6 @@
     $('#summernote').summernote();
   });
 </script>
+
+
 

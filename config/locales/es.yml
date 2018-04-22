@@ -7,7 +7,10 @@ es:
       other_details: "Otros detalles"
       policies_and_fees: "Condiciones"
       price: "Precio"
-      category: "Categoria"
+      outlet: "Outlet de paquetes Turísticos!!"
+      hotdeals: "Paquetes Turísticos"
+    deal:
+      apply: "Comprar"
     show:
       description: "Descripción"
       details: "Detalles"
@@ -15,47 +18,163 @@ es:
       policies_and_fees: "Condiciones"
       price: "Precio"
       questions: "Preguntas y respuestas acerca de este viaje"
+      HotDeals: "Paquetes Turísticos"
+      check: "Reserve Ahora"
+      book: "Reserve Ahora"
+      just_for: "Solo por hoy"
+      question: "Pregunta hecha por!!..."
+      back: "Atrás"
   payments:
     form:
       travellers: "Viajeros"
-      check_in: "Llegada"
-      check_out: "Partida"
+      daterange: "Selecciona Partida - Regreso"
+      pay: "Pago"
+      add: "Agregar a carrito"
     route:
       my_cart: "Mi Carrito"
       travellers: "Viajeros"
-      check_in: "Llegada"
-      check_out: "Partida"
+      daterange: "Fechas:"
       remove: "Remover"
       pay: "Pagar"
+    buys:
+      my_routes: "Mis Viajes"
+      travellers: "Viajeros"
+      daterange: "Fechas:"
   partials:
     navigation:
       colombia: "CONOCE COLOMBIA"
-      account: "CUENTA"
+      account: "MI CUENTA"
       my_cart: "MI CARRITO"
       HotDeals: "PAQUETES TURISTICOS"
       dropdown: "DESPLIEGA AQUI"
       My_routes: "Mis Viajes"
       Close_session: "Cerrar sesión"
       Sign_in: "Iniciar Sesión"
-      Sign_in_Facebook: "Iniciar sesión con Facebook "
+      Sign_in_Facebook: "Iniciar sesión con Facebook"
+      Sign_in_Google: "Iniciar Sesión con Google"
+      Edit_User: "Editar Cuenta"
       Create_account: "Crear cuenta"
       Language: "Idioma"
+      Visit: "Visita nuestras majestuosas regiones naturales"
+      Ready: "¿Estas listo para descubrir Colombia?"
+    footer:
+      Navigate: "Navegacion"
+      Company: "Empresa"
+      About: "Acerca de nosotros"
+      Privacy: "Politica de privacidad"
+      Terms: "Terminos de uso"
+      Contact: "Contactenos"
   destinations:
     show:
-      why_go: "Por que visitar"
-      to_do: "Que hacer"
+      why_go: "Por qué visitar"
+      to_do: "Qué hacer"
       sights: "Descubriras"
       festivals: "Festividades"
-      sleep: "Donde dormir"
-      eat: "Que comer"
-      drink: "Que tomar"
+      sleep: "Dónde dormir"
+      eat: "Qué comer"
+      drink: "Qué tomar"
       shop: "Compras"
       sightseeing: "Turismo"
-      filter: "Categoria"
-      HotDeals: "Paquetes turisticos"
+      HotDeals: "Paquetes Turísticos"
       Comments: "Comparte tu experiencia"
     destination:
       Know: "Descubre más"
+  comments:
+    form:
+      comment: "Crear Comentario"
+  questions:
+    form:
+      question: "Crear Pregunta"
+  regions:
+    show:
+      back: "Atrás"
+  errors:
+    messages:
+      expired: "ha expirado, por favor pide una nueva"
+      not_found: "no encontrado"
+      already_confirmed: "ya fue confirmada. Intenta ingresar."
+      not_locked: "no ha sido bloqueada"
+      not_saved:
+        one: "Ha habido 1 error:"
+        other: "Han habido %{count} errores:"
+  devise:
+    failure:
+      already_authenticated: 'Ya iniciaste sesión.'
+      unauthenticated: 'Tienes que registrarte o iniciar sesión antes de continuar.'
+      unconfirmed: 'Tienes que confirmar tu cuenta antes de continuar.'
+      locked: 'Tu cuente está bloqueada.'
+      invalid: 'Email o contraseña inválidos.'
+      invalid_token: 'Token de autentificación inválido.'
+      timeout: 'Tu sesión ha expirado. Inicia sesión nuevamente.'
+      inactive: 'Tu cuenta aun no ha sido activada.'
+    sessions:
+      new:
+        log_in: "Iniciar Sesión"
+      signed_in: 'Iniciaste sesión correctamente.'
+      signed_out: 'Cerraste sesión correctamente.'
+    passwords:
+      new:
+        forgot: "¿Olvidaste tu contraseña?"
+        send: "Enviar instrucciones para recuperar contraseña"
+      send_instructions: 'Recibirás un email con instrucciones para reiniciar tu contraseña en unos minutos.'
+      updated: 'Tu contraseña fue cambiada correctamente. Has iniciado sesión.'
+      updated_not_active: 'Tu contraseña fue cambiada correctamente.'
+      send_paranoid_instructions: "Si tu email existe en el sistema, recibirás instrucciones para recuperar tu contraseña en él"
+    confirmations:
+      new: 
+        Resend: "Reenviar las instrucciones de confirmacion"
+      send_instructions: 'Recibirás instrucciones para confirmar tu cuenta en tu email en unos minutos.'
+      send_paranoid_instructions: 'Si tu email existe en el sistema, recibirás instrucciones para confirmar tu cuenta en tu email en unos minutos.'
+      confirmed: 'Tu cuenta fue confirmada. Has iniciado sesión.'
+    registrations:
+      new:
+        Create_account: "Crear cuenta"
+        Sign_up: "Registrarse"
+      edit:
+        Edit: "Editar"
+        leave: "(dejar en blanco si no lo quieres cambiar)"
+        confirm: "(necesitamos su contraseña actual para confirmar sus cambios)"
+        Currently: "Estamos esperando confirmacion de:"
+        Update: "Actualizar"
+        Cancel: "Cancelar mi cuenta"
+        Unhappy: "¿Nos abandonas?"
+        sure: "¿Estas seguro?"
+        Back: "Atrás"
+      signed_up: 'Bienvenido! Te has registrado correctamente.'
+      signed_up_but_unconfirmed: 'Te hemos enviado un email con instrucciones para que confirmes tu cuenta.'
+      signed_up_but_inactive: 'Te has registrado correctamente, pero tu cuenta aun no ha sido activada.'
+      signed_up_but_locked: 'Te has registrado correctamente, pero tu cuenta está bloqueada.'
+      updated: 'Actualizaste tu cuenta correctamente.'
+      update_needs_confirmation: "Actualizaste tu cuenta correctamente, pero tenemos que revalidar tu email. Revisa tu correo para confirmar la dirección."
+      destroyed: 'Adiós, tu cuenta ha sido eliminada. Esperamos verte de vuelta pronto!'
+    shared:
+      links:
+        Log_in: "Iniciar Sesión" 
+        Sign_up: "Registrarse"
+        Forgot: "Recordar contraseña"
+    unlocks:
+      new:
+        Resend: "Reenviar instrucciones de desbloqueo"
+      send_instructions: 'Recibirás un email con instrucciones para desbloquear tu cuenta en unos minutos'
+      unlocked: 'Tu cuenta ha sido desbloqueada. Inicia sesión para continuar.'
+      send_paranoid_instructions: 'Si tu cuenta existe, recibirás instrucciones para desbloquear tu cuenta en unos minutos'
+    omniauth_callbacks:
+      success: 'Te autentificaste correctamente con tu cuenta de %{kind}.'
+      failure: 'No pudimos autentificar tu cuenta de %{kind} por la siguiente razón: %{reason}.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instrucciones de confirmación'
+      reset_password_instructions:
+        subject: 'Instrucciones de cambio de contraseña'
+      unlock_instructions:
+        subject: 'Instrucciones de desbloqueo'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "El email no puede estar vacio"  
   activerecord:
     errors:
       messages:
@@ -271,4 +390,3 @@ es:
       long: "%-d de %B de %Y %H:%M"
       short: "%-d de %b %H:%M"
     pm: pm
-

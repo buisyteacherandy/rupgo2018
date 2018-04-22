@@ -1,29 +1,58 @@
 
 <%= form_for(payment) do |f| %>
 	<% if payment.errors.any? %>
-		<<h2><%= pruralize(payment.errors.count, "error")%> avoid it your purchase to success</h2>
+		<h2><%= pruralize(payment.errors.count, "error")%> avoid it your purchase to success</h2>
 	<%end%>
 
 	<%= f.hidden_field :deal_id, value: deal.id %>
 
 <div class="sel sel--superman">
     <strong><%= t ".travellers" %></strong>
-    <%= f.select :quantity, options_for_select(1..12), :class => "select-superpower" %>
+    <%= f.select :quantity, options_for_select(1..22), :class => "select-superpower" %>
 </div>
 
-<div class="">
-    <strong><%= t ".check_in" %></strong>
-    <%= f.date_select :check_in %>
+<div class="sel sel--superman">
+    <strong><%= t ".daterange" %></strong>
+    <%= f.text_field :daterange, :class => "daterange" %>
 </div>
 
-<div class="">
-    <strong><%= t ".check_out" %></strong>
-    <%= f.date_select :check_out %> 
-</div>
+
+<script>
+  $(document).ready(function () {
+
+$(function() {
+  var nowDate = new Date();
+  var today = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0, 0);
+
+  $('input[class="daterange"]').daterangepicker({
+      startDate: today,
+      minDate: today,
+      opens: "left", 
+      autoUpdateInput: false,
+      locale: {
+          cancelLabel: 'Clear'
+
+      }
+  });
+
+  $('input[class="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+  });
+
+  $('input[class="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+  });
+
+});
+
+  })
+</script>
+
+
 <br>
 <br>
 <div class="actions">
-    <%= f.submit %>
+    <%= f.submit (t ".add"), :class => "btn btn-success"%>
 </div>
 
 <%end%>

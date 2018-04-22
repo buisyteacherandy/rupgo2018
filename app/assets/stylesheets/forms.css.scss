@@ -20,8 +20,7 @@
 
 .sel::before {
   position: absolute;
-  content: '\f063';
-  font-family: 'FontAwesome';
+  
   font-size: 2em;
   color: #FFF;
   right: 20px;
@@ -64,7 +63,7 @@
 }
 
 .sel__box {
-  position: absolute;
+  
   top: calc(100% + 4px);
   left: -4px;
   display: none;
@@ -74,11 +73,16 @@
   background-color: #FFF;
   width: calc(100% + 8px);
   box-sizing: border-box;
+
 }
 
 .sel.active .sel__box {
   display: block;
   animation: fadeInUp 500ms;
+  height: 150px;
+  overflow: scroll;
+
+  
 }
 
 .sel__box__options {

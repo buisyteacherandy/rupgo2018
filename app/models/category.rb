@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
 	validates :name, presence: true
+	translates :name, :catecover
 	has_many :has_categories
 	has_many :destinations, through: :has_categories
 	has_attached_file :catecover, styles: { medium: "1280x720", thumb: "800x600"}

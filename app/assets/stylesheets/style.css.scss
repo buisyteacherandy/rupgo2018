@@ -188,10 +188,14 @@ header nav ul li{
 	height: 72px;
 	background-color: rgba(0,0,0,0.9);
     margin-bottom: 0px;
+    font-family: "Oswald"
 }
 
 .navbar-right{
-	height: 72px
+	height: 72px;
+	padding-right: 80px
+
+
 }
 .navbar-right img{
 	margin-top: 10px
@@ -211,7 +215,14 @@ header nav ul li{
 
 }
 
- 
+.itnav img{
+	width: 40px;
+	overflow: hidden;
+	 
+}
+.itnav img:hover{
+	filter:saturate(8);
+} 
 
 .sign
 
@@ -238,7 +249,14 @@ header nav ul li{
 	background-repeat: repeat;
 	font-family: "Oswald"
 }
+.signed{
+	box-shadow: 5px 5px 7px rgba(0,0,0,0.5);
 
+	background-color: rgba(0,0,0,0.5);
+	background-image: url(pattern.png);
+	background-repeat: repeat;
+	font-family: "Oswald"
+}
 .navbar-brand {
 	width: 200px;
 	
@@ -265,7 +283,7 @@ header nav ul li{
 
 #regions li:hover {
 	color: white;
-	background-color: #555;
+	background-color: #78a830;
 	border-bottom: 3px solid #598;
 	}
 #regions li a{
@@ -339,7 +357,7 @@ header nav ul li{
 	width: 100%;
     display: inline-block;
     color: #fff;
-    background-color: #559;
+    background-color: #2a93d5;
     padding: 8px 16px;
     text-decoration: none;
     top: 5px;
@@ -347,7 +365,7 @@ header nav ul li{
 	}
 #categories ul .categories_button:hover {
 	color: white;
-    background-color: #555;
+    background-color: #78a830;
 	border-bottom: 3px solid #598
  	}
 
@@ -425,7 +443,7 @@ header nav ul li{
 }
 .destine-container{
 	margin-top: 100px;
-	width: 100% !important
+	width: 80% !important
 }
 
 
@@ -489,9 +507,10 @@ h1{
 
 
 .main-destines-index{
-	margin-top: -120px;
+	margin-top: 40px;
 	font-family: "Exo 2";
 	font-weight: 900;
+	margin-bottom: 50px 
 	
 }
 
@@ -511,7 +530,9 @@ h1{
 
 // static version
 footer{
-	background: #646464;
+	background-image: url(footerbk.jpg);
+	background-size: cover;
+	background-position: fixed !important;
 	padding: 25px 0 0 0;
 	position: fixed bottom;
 	width: 100%;
@@ -525,13 +546,18 @@ footer a{
 	text-decoration: none;
 	color: white !important
 }
-.container{
+.container-footer{
 			
-	width: 100%
+	width: 90% !important;
+	
+}
+.container-footer .col-md-6, .col-md-3{
+	color: white;
+
 }
 
 .main-rows{
-	width: 80%;
+	width: 100%;
 	margin: 0 auto !important;
 	 
 }
@@ -541,6 +567,10 @@ footer a{
 }
 .inner{
 	padding: 15px 0 0 0
+}
+.inner> div{
+	text-align: center;
+	color: white
 }
 .tmk{
 	font-size: .8em;
@@ -564,7 +594,7 @@ footer a{
 }
 
 .logof{
-	width: 50%
+	width: 100%
 }
 .logofbootom{
 	width: 65px
@@ -592,13 +622,13 @@ li{
 }
 .iconss i{
 	
-	color: #D9D384;
+	color: #DF6E20;
 	transition: all 0.2s
 	 
 }
 
 .iconss i:hover{
-	color: #CCCED9;
+	color: #F3B890;
 
 }
 .last-info{
@@ -698,8 +728,11 @@ body{
 /*styles deals options 2 */
 
 .nested-deals{
-	background: black
+	
+	text-align: center;
+	clear: both;
 }
+
 .main-row{
 	padding: 0;
 	margin: 0 auto;
@@ -746,16 +779,31 @@ body{
 	right: -71px;
 	top: -10px;
 	font-family: exo2;
-	font-size: 22px;
-	font-weight: 900
+	font-size: 1.2em;
+	font-weight: 900;
+	text-shadow: 0.7px 0.7px 1px rgba(0,0,0,0.9)
+
 
 }
+
 .deal2-img{
 	position: relative;
 }
 
 .description h1{
 	font-weight: bold
+}
+
+.details_deals{
+	padding: 10px;
+	margin: 25px auto; 
+	text-align: center;
+	font-family: 'Oswald', sans-serif !important;
+	font-size: 1.8em;
+	color: rgb(51,51,51);
+}
+.caption{
+	font-family: 'Oswald', sans-serif;
 }
 // end styles deals options 2
 
@@ -830,21 +878,19 @@ body{
 #inner-reservation-hotdeal{
 	margin-top: 20%;
 	
-	background: #2971e5 !important;
+	background: #337ab7 !important;
 	padding: 25px;
 
 }
-#buy-now{
-	
-}
+
 #buy-now{
 	color: white;
-	
+	font-weight: bold;
+	font-size: 2em !important;
 	text-align: center
 }
-#buy-now {
-	font-size: 2em !important;
-}
+
+
 #specification-deal{
 	width: 90%;
 	margin: 0 auto
@@ -853,7 +899,7 @@ body{
 	margin-top: 10px
 }
 .panel-heading_proper{
-	background-color:  rgb(41,113,229) !important;
+	background-color:  #337ab7 !important;
 	height: 4em;
 	border-radius: 0px !important;
 
@@ -959,3 +1005,241 @@ body{
 }
 
 /*cart end*/
+
+/*tabla de Dashboard*/
+
+table {
+	color: #333; 
+	font-family: Helvetica, Arial, sans-serif; 
+	width: 100%; 
+	border: double 2px;}
+td, th { border: 2px double; height: 30px;}
+th { background: #D3D3D3; font-weight:bold; }
+td { background: #FAFAFA; text-align: center;}
+tr:nth-child(even) td { background: #F1F1F1; }
+tr:nth-child(odd) td { background: #FEFEFE; }
+tr td:hover { background: #666; color: #FFF; }
+
+/*tablas de Dashboard end*/
+
+
+
+/*tooltips start*/
+
+
+.ui-tooltip, .arrow:after {
+    background: black;
+    border: 2px solid white;
+  }
+  .ui-tooltip {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    font: bold 14px "Helvetica Neue", Sans-Serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+  }
+  .arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+  }
+  .arrow.top {
+    top: -16px;
+    bottom: auto;
+  }
+  .arrow.left {
+    left: 20%;
+  }
+  .arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .arrow.top:after {
+    bottom: -20px;
+    top: auto;
+  }
+/*tooltips ends*/
+
+
+/*Session log in*/
+/* ---------- GENERAL ---------- */
+
+body {
+	background-color: #f4f4f4;
+	color: #5a5656;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+a { text-decoration: none; }
+
+h1 { font-size: 1em; }
+
+h1, p {
+	margin-bottom: 10px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.uppercase { text-transform: uppercase; }
+
+/* ---------- LOGIN ---------- */
+
+#login {
+	margin: 50px auto;
+	width: 300px;
+}
+
+form fieldset input[type="text"], input[type="password"] {
+	background-color: #e5e5e5;
+	border: none;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #5a5656;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	height: 50px;
+	outline: none;
+	padding: 0px 10px;
+	width: 280px;
+	-webkit-appearance:none;
+}
+
+form fieldset input[type="submit"] {
+	background-color: #008dde;
+	border: none;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #f4f4f4;
+	cursor: pointer;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	height: 50px;
+	text-transform: uppercase;
+	width: 300px;
+	-webkit-appearance:none;
+}
+
+form fieldset a {
+	color: #5a5656;
+	font-size: 10px;
+}
+
+form fieldset a:hover { text-decoration: underline; }
+
+.btn-round {
+	background-color: #5a5656;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	color: #f4f4f4;
+	display: block;
+	font-size: 12px;
+	height: 50px;
+	line-height: 50px;
+	margin: 30px 125px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 50px;
+}
+
+.facebook-before {
+	background-color: #0064ab;
+	border-radius: 3px 0px 0px 3px;
+	-moz-border-radius: 3px 0px 0px 3px;
+	-webkit-border-radius: 3px 0px 0px 3px;
+	color: #f4f4f4;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+}
+
+.facebook {
+	background-color: #0079ce;
+	border: none;
+	border-radius: 0px 3px 3px 0px;
+	-moz-border-radius: 0px 3px 3px 0px;
+	-webkit-border-radius: 0px 3px 3px 0px;
+	color: #f4f4f4;
+	cursor: pointer;
+	height: 50px;
+	text-transform: uppercase;
+	width: 250px;
+}
+
+.twitter-before {
+	background-color: #189bcb;
+	border-radius: 3px 0px 0px 3px;
+	-moz-border-radius: 3px 0px 0px 3px;
+	-webkit-border-radius: 3px 0px 0px 3px;
+	color: #f4f4f4;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+}
+
+
+.twitter {
+	background-color: #1bb2e9;
+	border: none;
+	border-radius: 0px 3px 3px 0px;
+	-moz-border-radius: 0px 3px 3px 0px;
+	-webkit-border-radius: 0px 3px 3px 0px;
+	color: #f4f4f4;
+	cursor: pointer;
+	height: 50px;
+	text-transform: uppercase;
+	width: 250px;
+}
+/*end session log in*/
+
+/*PARALLAXING*/
+
+/*booknow*/
+.sel__placeholder{
+	color: white !important;
+
+}
+
+
+.sel--superman strong{
+	color: white;
+	font-size: 2.5em
+}
+
+.daterange{
+	width: 100%;
+	height:30px
+}
+
+.actions input{
+
+}
+/*end bokknow*/
+
+.effect-zoe{
+	box-shadow: 3px 3px 2px 2px rgba(0,0,0,0.5)
+}

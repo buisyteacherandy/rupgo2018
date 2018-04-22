@@ -24,6 +24,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+
 # Adding bootstap
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-rails'  
@@ -31,11 +32,13 @@ gem 'feathericon-sass'
 gem 'simple_form'
 gem 'summernote-rails', '~> 0.8.3.0' 
 gem 'codemirror-rails'
+gem 'momentjs-rails', '~> 2.20', '>= 2.20.1'
 gem 'bootstrap-datepicker-rails'
 # Omniauth istallation
 gem 'omniauth'
 # middleware facebook
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -52,11 +55,14 @@ gem 'will_paginate'
 gem 'activemerchant'
 gem 'rails-erd'
 gem 'record_tag_helper', '~> 1.0'
+gem 'pry'
+
+
 
 
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+#gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -64,6 +70,13 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.7', '>= 3.7.1'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-passenger', '~> 0.2.0'
+
+  # Add this if you're using rbenv
+  gem 'capistrano-rbenv', '~> 2.1'
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'

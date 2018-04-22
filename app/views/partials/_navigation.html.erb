@@ -1,126 +1,123 @@
 <header>
-
-  <nav class="navbar navbar-fixed-top">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+  <div class="container">
+    <div class="menu-wrap">
+        <nav class="menu">
+          <% if user_signed_in? %>           
+          <div class="profile">
+            
+            
+            <img src="" alt=""/>
+            <span>
+              <%= current_user.first_name  %></span>&nbsp<span><%= current_user.last_name  %>
+            </span>
+          </div>
+          
+          <div class="link-list">
+            <ul>
+              <li><%= link_to (t ".My_routes"), buys_path %></li>
+              <li><%= link_to (t ".Edit_User"), edit_user_registration_path %></li>
+              <li><%= link_to (t ".Close_session"), destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </div>
+            <% else %>
+          <div class="link-list">
+            <ul>
+              <li><%= link_to (t ".Sign_in"), new_user_session_path %></li>
+              <li><%= link_to (t ".Sign_in_Facebook"), user_omniauth_authorize_path(:facebook) %></li>
+              <li><%= link_to (t ".Sign_in_Google"), user_google_oauth2_omniauth_authorize_path %></li>
+              <li><%= link_to (t ".Create_account"), new_user_registration_path %></li>
+            </ul>
+          </div>
+              
+            
+                   
+          <div class="icon-list">
+            <%= link_to '<i class="fa fa-fw fa-home"></i>'.html_safe, destinations_path %>
         
-        <%= link_to image_tag("marca.png"), destinations_path, :class=>"navbar-brand" %>
-      </div> <!-- navbar-header -->
+            
+            
+          </div>
+
+          <% end %>
+        </nav>
+    </div>
+    <button class="menu-button" id="open-button"><i class="fa fa-fw fa-lg fa-cog"></i><span>Open Menu</span></button>
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <%= link_to image_tag("marca.png"), destinations_path, :class=>"navbar-brand" %>
+        </div> <!-- navbar-header -->
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        
-       
-       
-
-        
-        
-          <!-- Search -->
-           
-          
-          <!-- Search end-->
-
-        <ul class="nav navbar-nav navbar-right">
-          
-          <li class="itnav" id="colombia"><%= t ".colombia" %></li>
-          <li class="itnav"><%= link_to (t ".HotDeals"), deals_path %></li>
-        <% if user_signed_in? %>
-          <li class="itnav cart_icon">
-
-                       <%= link_to (t ".my_cart"), route_path %></li>
-          
-          
-        <% end -%>
-        
-
-        <li class="itnav"> 
-       <span> <%= link_to_unless_current image_tag("en.png"),:class => "active-en", locale: "en" %> </span> 
-        <span><%= link_to_unless_current image_tag("es.png"),:class => "active-es", locale: "es" %></span></li>
-          <li class="dropdown sign itnav">
-                            
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<span class="carret"></span></a>
-            <ul class="dropdown-menu signed">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="itnav" id="colombia"><%= t ".colombia" %></li>
+            <li class="itnav"><%= link_to (t ".HotDeals"), deals_path %></li>
             <% if user_signed_in? %>
+            <li class="itnav cart_icon">
+            <%= link_to (t ".my_cart"), route_path %></li>
+            <% end -%>
+            <li class="itnav"> 
+            <span> <%= link_to_unless_current image_tag("en.png"),:class => "active-en", locale: "en" %> </span> 
+            <span><%= link_to_unless_current image_tag("es.png"),:class => "active-es", locale: "es" %></span></li>
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+        <div id="mega_menu" class="no-list">
+          <div class="row">  
+            <div id="colombia-map" class="col-sm-3 col-md-3 ">
+                <ul>
+                  <li> <%= image_tag "and.png", :alt => "", :class => "filter img-responsive and" %></li>
+                  <li> <%= image_tag "car.png", :alt => "", :class => "filter img-responsive car" %></li>
+                  <li><%= image_tag "ins.png", :alt => "", :class => "filter img-responsive ins" %></li>
+                  <li> <%= image_tag "amaz.png", :alt => "", :class => "filter img-responsive amaz" %></li>
+                  <li><%= image_tag "gor.png", :alt => "", :class => "filter img-responsive gor" %></li>
+                  <li><%= image_tag "pac.png", :alt => "", :class => "filter img-responsive pac" %></li>
+                  <li><%= image_tag "ori.png", :alt => "", :class => "filter img-responsive ori" %></li>
+                </ul>
+            </div> <!-- end of colombia -->
 
-              
-
-              <li><%= link_to (t ".My_routes"), buys_path %></li>
-              <li><%= link_to (t ".Close_session"), destroy_user_session_path, method: :delete %></li>
-               <% else %>
-              <li role="separator" class="divider"></li>
-              <li><%= link_to (t ".Sign_in"), new_user_session_path %></li>
-              <!--  -->
-              <li><%= link_to (t ".Sign_in_Facebook"), user_omniauth_authorize_path(:facebook) %></li>
-              <li><%= link_to (t ".Create_account"), new_user_registration_path %></li>
-            <% end %>
-            </ul>
-          </li>
-          
-        </ul>
-      </div><!-- /.navbar-collapse -->
-  
-    
-    <div id="mega_menu" class="no-list">
-        <div class="row">
-          
-          <div id="colombia-map" class="col-sm-3 col-md-3 ">
+            <div id="regions" class="column col-sm-6 col-md-3" >
+              <h3><%= t ".Visit" %></h3>
               <ul>
-                
-                <li> <%= image_tag "and.png", :alt => "", :class => "filter img-responsive and" %></li>
-                <li> <%= image_tag "car.png", :alt => "", :class => "filter img-responsive car" %></li>
-                <li><%= image_tag "ins.png", :alt => "", :class => "filter img-responsive ins" %></li>
-                <li> <%= image_tag "amaz.png", :alt => "", :class => "filter img-responsive amaz" %></li>
-                <li><%= image_tag "gor.png", :alt => "", :class => "filter img-responsive gor" %></li>
-                <li><%= image_tag "pac.png", :alt => "", :class => "filter img-responsive pac" %></li>
-                <li><%= image_tag "ori.png", :alt => "", :class => "filter img-responsive ori" %></li>
-              </ul>
-            
-          </div> <!-- end of colombia -->
-
-          <div id="regions" class="column col-sm-6 col-md-3" >
-            <h3>Visit Our Natural Regions</h3>
-            <ul>
-            <%= content_tag_for(:li, @regions) do |region| %>
-            <%= link_to region.name,region %> 
-            <% end %>
-            </ul>
-          </div><!-- regions -->
-       
-          
-            
-          <div id="categories" class="column col-sm-6 col-md-6">
-            <ul>
-              <li>
-                <h3>Ready to get to Know Colombia?</h3>
-              </li>
-            </ul>
-
-            <br>
-            <ul>
-              <% @categories.each do  |category| %> 
-              <li class="col-xs-12 col-md-4 sm-4 category">
-                    
-              <%= link_to category.name,category, :class=>"categories_button"%> 
-              <div class="categories_cover">
-              <%= link_to category do %>
-              <%= image_tag category.catecover.url() %>
+              <%= content_tag_for(:li, @regions) do |region| %>
+              <%= link_to region.name,region %> 
               <% end %>
-              
-              </div>
-              </li> 
-              
-              <% end -%>
-            </ul>
-          </div> <!-- end categories -->
+              </ul>
+            </div><!-- regions -->
+            <div id="categories" class="column col-sm-6 col-md-6">
+              <ul>
+                <li>
+                  <h3><%= t ".Ready" %></h3>
+                </li>
+              </ul>
+
+              <br>
+              <ul>
+                <% @categories.each do  |category| %> 
+                <li class="col-xs-12 col-md-4 sm-4 category">
+                      
+                  <%= link_to category.name,category, :class=>"categories_button"%> 
+                  <div class="categories_cover">
+                  <%= link_to category do %>
+                  <%= image_tag category.catecover.url() %>
+                  <% end %>
+                  
+                  </div>
+                </li> 
+                <% end -%>
+              </ul>
+            </div> <!-- end categories -->
         
-        </div> <!-- row -->
+          </div> <!-- row -->
         <!-- <div class="row bottom"> Active este cuando tenga contenido para msotrar debajo de el menu desplegable de este Megamenu -->
           
         </div>
@@ -263,15 +260,47 @@ $(function () {
     }))
   </script>
   <script>
-    var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    (function() {
 
-   
-    
-    var random-colour =  $('body').css("background",hue);
+  var bodyEl = document.body,
+    content = document.querySelector( '.content-wrap' ),
+    openbtn = document.getElementById( 'open-button' ),
+    closebtn = document.getElementById( 'close-button' ),
+    isOpen = false;
 
-    $("")
+  function init() {
+    initEvents();
+  }
 
+  function initEvents() {
+    openbtn.addEventListener( 'click', toggleMenu );
+    if( closebtn ) {
+      closebtn.addEventListener( 'click', toggleMenu );
+    }
+
+    // close the menu element if the target it´s not the menu element or one of its descendants..
+    content.addEventListener( 'click', function(ev) {
+      var target = ev.target;
+      if( isOpen && target !== openbtn ) {
+        toggleMenu();
+      }
+    } );
+  }
+
+  function toggleMenu() {
+    if( isOpen ) {
+      classie.remove( bodyEl, 'show-menu' );
+    }
+    else {
+      classie.add( bodyEl, 'show-menu' );
+    }
+    isOpen = !isOpen;
+  }
+
+  init();
+
+})();
   </script>
      
-  <!-- End of Map Script -->
+  </div><!-- End of Map Script -->
 </header>

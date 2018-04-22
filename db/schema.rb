@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320040849) do
+ActiveRecord::Schema.define(version: 20180414164952) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20180320040849) do
     t.string   "catecover_content_type"
     t.integer  "catecover_file_size"
     t.datetime "catecover_updated_at"
+  end
+
+  create_table "category_translations", force: :cascade do |t|
+    t.integer  "category_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.string   "catecover"
+    t.index ["category_id"], name: "index_category_translations_on_category_id"
+    t.index ["locale"], name: "index_category_translations_on_locale"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -72,6 +83,7 @@ ActiveRecord::Schema.define(version: 20180320040849) do
     t.string   "filter"
     t.string   "category"
     t.text     "video_deal"
+    t.string   "daterange"
     t.index ["destination_id"], name: "index_deals_on_destination_id"
     t.index ["user_id"], name: "index_deals_on_user_id"
   end
@@ -150,6 +162,13 @@ ActiveRecord::Schema.define(version: 20180320040849) do
     t.index ["region_id"], name: "index_has_regions_on_region_id"
   end
 
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_identities_on_user_id"
+  end
+
   create_table "payments", force: :cascade do |t|
     t.integer  "deal_id"
     t.integer  "user_id"
@@ -159,6 +178,8 @@ ActiveRecord::Schema.define(version: 20180320040849) do
     t.date     "check_in"
     t.date     "check_out"
     t.integer  "quantity"
+    t.integer  "total"
+    t.string   "daterange"
     t.index ["deal_id"], name: "index_payments_on_deal_id"
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
@@ -171,6 +192,17 @@ ActiveRecord::Schema.define(version: 20180320040849) do
     t.datetime "updated_at", null: false
     t.index ["deal_id"], name: "index_questions_on_deal_id"
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "region_translations", force: :cascade do |t|
+    t.integer  "region_id",  null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "rcover"
+    t.index ["locale"], name: "index_region_translations_on_locale"
+    t.index ["region_id"], name: "index_region_translations_on_region_id"
   end
 
   create_table "regions", force: :cascade do |t|
@@ -216,6 +248,15 @@ ActiveRecord::Schema.define(version: 20180320040849) do
     t.datetime "image_updated_at"
   end
 
+  create_table "user_providers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_providers_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -237,6 +278,7 @@ ActiveRecord::Schema.define(version: 20180320040849) do
     t.string   "last_name"
     t.string   "nickname"
     t.text     "image"
+    t.datetime "date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

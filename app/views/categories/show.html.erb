@@ -1,11 +1,13 @@
-<% if signed_in? && current_user.is_admin? %>
-
-
-<div class="centerforms">
+<p id="notice"><%= notice %></p>
+<div class="img-regions" style="background:url(<%= @category.catecover.url() %>);margin-top:-80px;left:0px;width:100%;background-repeat: no-repeat; background-position: center center;
+	background-size: cover;line-height: 150px">
+	<h2><%= @category.name %></h2>
+     </div>
+<div class="destine-container">
 <div class="container-fluid">
-	<p id="notice"><%= notice %></p>
+	
 
-	<h1><%= @category.name %></h1>
+
 
 	<div class="row">
 	     <%= render @category.destinations %>  
@@ -16,8 +18,4 @@
 	<%= link_to 'Back', destinations_path %>
 	<%= link_to 'Edit', edit_category_path(@category) %> |
 </div>
-
 </div>
-<% else %>
-          <div class="nothing"></div>
-<% end %>

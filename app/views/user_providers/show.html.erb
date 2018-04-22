@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_provider.user %>
+</p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @user_provider.provider %>
+</p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @user_provider.uid %>
+</p>
+
+<%= link_to 'Edit', edit_user_provider_path(@user_provider) %> |
+<%= link_to 'Back', user_providers_path %>

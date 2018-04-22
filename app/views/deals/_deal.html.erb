@@ -18,10 +18,11 @@
         <h3><%= link_to deal.place, deal %></h3>
         <p>
           <%=truncate(deal.details,length:90) %>
+          <%=link_to (t ".read"), deal%>
         </p>
         <div class="btn-group">
                 
-            <button type="button" class="btn btn-success"><%= link_to 'Apply Now', deal %></button>
+            <button type="button" class="btn btn-success"><%= link_to (t ".apply"), deal %></button>
             <% if signed_in? && current_user.is_admin? %>
             <button type="button" class="btn btn-primary"><%= deal.destination_id %></button>
             <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_deal_path(deal) %></button>

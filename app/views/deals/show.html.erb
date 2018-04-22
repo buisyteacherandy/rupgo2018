@@ -7,15 +7,15 @@
  
     <nav class="breadcrumb">
       <li><%= link_to "Home", destinations_path, :class => "breadcrumb-item" %> </li>
-      <li><%= link_to "Hot Deals", deals_path, :class => "breadcrumb-item" %> </li>
-      <li><span class="breadcrumb-item active">Check Hot Deal</span></li>
+      <li><%= link_to (t ".HotDeals"), deals_path, :class => "breadcrumb-item" %> </li>
+      <li><span class="breadcrumb-item active"><%= t ".check" %></span></li>
           
     </nav>
   
   <div id="place-img-reservation" class="row">
     <div id="price" class="row">
       <div class="col-md-12">
-      <h1>Just For &nbsp <%= @deal.currency %> &nbsp<%= @deal.price %></h1>
+      <h1><%= t ".just_for" %> &nbsp <%= @deal.currency %> &nbsp<%= @deal.price %></h1>
       </div>
     </div>
     <div id="deal-img-reservation" class="row">
@@ -32,10 +32,20 @@
             <div class="item">
               
               <div class="deal2-img">
-                
-                <div class="deal2-promo ">
+          
+          <% if @deal.other_details.blank? %>
+            
+            <div class="nothing"></div>
+            
+          
+               <% else %>
+           <div class="deal2-promo ">
                 <%= @deal.other_details %>
                 </div>
+            <% end %>
+
+
+               
                 
                 <%= image_tag @deal.pic.url() %>
               </div> <!-- deal2-img -->
@@ -45,7 +55,7 @@
               
               <div class="deal2-img">
                 
-                <div class="deal2-promo ">
+                <div class="deal2-promo">
                 <%= @deal.other_details %>
                 </div>
                 
@@ -65,31 +75,36 @@
       
       <div id="reservation-hotdeal" class="col-md-4">
         <div id="inner-reservation-hotdeal">
-          <div id="buy-now">
-            <h3>Book Now</h3>
+          <div id="buy-now"> 
+            <h2><strong><%= t ".book" %></strong></h2>
           </div>
           <br> <!-- pilas con este break...es temporal -->
           <div id="reservation">
-            <% if !user_signed_in? %>
-              <%= render "payments/form", payment: Payment.new, deal: @deal %>
-              <% end %>
-
-
-              <% if user_signed_in? %>
-               <% if @deal.user_already_paid? current_user.id %>
-              <% else %> 
+            <!--< if !user_signed_in? %>
+              < render "payments/form", payment: Payment.new, deal: @deal %>
+            < end %>
+            < if user_signed_in? %>
+              < if @deal.user_already_paid? current_user.id %>
+              < else %> -->
                 <%= render "payments/form", payment: Payment.new, deal: @deal %>
-              <% end %>
-            <% end %>
-            <span><p>
-  <strong><%= t ".category" %>:</strong>
-  <%= @deal.category %>
-</p></span>
+              <!--< end %>
+            < end %>-->
+            
           </div>
         </div>
       </div><!--  reservation-hotdeal -->
     </div><!-- deal-img-reservation -->
   </div><!-- place-img-reservation End-->
+
+  <!-- DEAL DETAIL -->
+<div class="details_deals">
+          <%= @deal.details %>
+        </div>
+
+  <!-- END DEAL DETAIL -->
+
+
+
   <div id="specification-deal">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" data-parent="false">
   <div class="panel panel-default">
@@ -102,7 +117,7 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-        <%= @deal.description.html_safe  %>
+        <%= @deal.description.html_safe?  %>
       </div>
     </div>
   </div>
@@ -142,7 +157,7 @@
             
           </div>
   <div class="media-body">
-    <h4 class="media-heading">Question Made By!!...</h4>
+    <h4 class="media-heading"><%= t ".question" %></h4>
     <%= question.body %>
   </div>
 
@@ -158,9 +173,14 @@
 </div>
   </div>
 
-<%= link_to 'Back', deals_path %>
+<%= link_to (t ".back"), deals_path %>
 </div> <!-- end Container fluid -->
-
+<script>
+$( ".deal2-promo:empty" )
+  .text( "Was empty!" )
+  .css( "background", "rgb(255,220,200)" );
+</script>
+</script>
 <script>
 $('.owl-carousel').owlCarousel({
     loop:true,

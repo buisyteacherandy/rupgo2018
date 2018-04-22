@@ -33,11 +33,12 @@
 
 }
 .img-deals h3{
-	font-family: Rancho; 
+	font-family: 'Rancho'; 
 	 font-size: 72px;
 	 line-height: 4; 
 	 text-align: center;
-	 color: black;
+	 color: white;
+	 text-shadow: 1px 1px 3px  rgba(0,0,0,0.8)
 	 
 }
 
@@ -47,9 +48,12 @@
 	width: 100%;
 	padding: 0;
 	text-align: center;
+	margin:  0;
+	height: auto;
 
 }
 .gridd {
+	width: 100%;
 	position: relative;
 	text-align: center;
 	margin: 0 auto;
@@ -57,6 +61,9 @@
 	max-width: 1300px;
 	list-style: none;
 	text-align: center;
+	clear: both;
+	
+	
 }
 
 .gridd .deal-info{
@@ -94,6 +101,7 @@ figure.effect-zoe .price-deal {
 
 figure.effect-zoe:hover .deal-info,
 figure.effect-zoe:hover .name-deal,
+figure.effect-zoe:hover .price-deal,
 figure.effect-zoe:hover .price-deal {
 
 	-webkit-transition: -webkit-transform 0.35s;
@@ -102,23 +110,40 @@ figure.effect-zoe:hover .price-deal {
 	transform: translate3d(100%,0,0 );
 	transition-timing-function: ease-in-out;
   transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  -webkit-filter: blur(2.5px);
+}
+
+
+figure.effect-zoe img {
+	
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	
+	transition-timing-function: ease-in-out;
+  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+figure.effect-zoe:hover img{
+	-webkit-filter: blur(1px);
+	-webkit-filter: opacity(0.4);
 }
 
 /* Common style */
 .gridd figure {
+	
 	position: relative;
-	float: left;
+	display: inline-block;
 	overflow: hidden;
 	min-width: 320px;
 	max-width: 480px;
 	max-height: 360px;
 	width: 48%;
 	background: #3085a3;
+	margin: 1%;
 	text-align: center;
-	
-	margin: 50px 10px 0 10px
-}
+	box-sizing: border-box;
 
+}
 .gridd figure img {
 	position: relative;
 	display: block;
@@ -1074,6 +1099,7 @@ figure.effect-zoe figcaption {
 	padding: 1em;
 	height: 3.75em;
 	background: #fff;
+	font-family: 'Oswald', sans-serif;
 	color: #3c4a50;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
@@ -1099,16 +1125,27 @@ figure.effect-zoe:hover p.icon-links a:focus {
 
 figure.effect-zoe .description {
 	position: absolute;
-	bottom: 8em !important;
-	padding: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	left: 10px;
+	right: 10px;
 	color: #fff;
+	bottom: 150px !important;
+	text-align: center;
 	text-transform: none;
-	font-size: 90%;
+	font-size: 1.4em;
+	font-family: 'Oswald', sans-serif;
 	opacity: 0;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 	-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
-	border: 0.1px solid black
+
+}
+
+figure.effect-zoe .description a {
+	
+	color: #fff;
+	
 }
 
 figure.effect-zoe h2,

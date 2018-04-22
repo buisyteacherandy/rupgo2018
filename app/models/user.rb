@@ -1,12 +1,16 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable       
-  devise :omniauthable, :omniauth_providers => [:facebook]
+  devise :database_authenticatable, :registerable, :omniauthable, 
+     :recoverable, :rememberable, :trackable, 
+     :omniauth_providers => [:facebook, :google_oauth2]
 
+
+ 
+  has_many :user_providers, :dependent => :destroy
+  
   has_many :destinations
-  has_many :deals
+  has_many :deals, through: :payments
   has_many :payments
   has_many :transactions
   has_many :questions, dependent: :destroy
@@ -22,11 +26,17 @@ def self.from_omniauth(auth)
     user.password = Devise.friendly_token[0,20]
   end
 end
-
   include PermissionsConcern
 
-	def pending_purchase_price
-		payments.where(state: 1).joins("INNER JOIN deals on deals.id == payments.deal_id").sum("price")
-	end
+  def pending_purchase_price
+    payments = self.payments.where(state: 1)
+    total = 0
+    payments.each do |payment|
+      total = total + payment.total
+    end
+    return total
+    #self.payments.where(state: 1).joins("INNER JOIN deals on deals.id == payments.deal_id").sum("price")
+  end
 
 end
+

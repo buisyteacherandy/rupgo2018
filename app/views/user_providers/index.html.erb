@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Providers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Provider</th>
+      <th>Uid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_providers.each do |user_provider| %>
+      <tr>
+        <td><%= user_provider.user %></td>
+        <td><%= user_provider.provider %></td>
+        <td><%= user_provider.uid %></td>
+        <td><%= link_to 'Show', user_provider %></td>
+        <td><%= link_to 'Edit', edit_user_provider_path(user_provider) %></td>
+        <td><%= link_to 'Destroy', user_provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Provider', new_user_provider_path %>

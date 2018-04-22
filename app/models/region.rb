@@ -1,5 +1,7 @@
+
 class Region < ApplicationRecord
 	validates :name, presence: true
+	translates :name, :rcover
 	has_many :destinations, through: :has_regions
 
 	has_many :has_regions

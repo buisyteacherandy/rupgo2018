@@ -1,0 +1,1 @@
+json.partial! "user_providers/user_provider", user_provider: @user_provider

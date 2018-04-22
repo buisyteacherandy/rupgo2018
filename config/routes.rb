@@ -1,6 +1,10 @@
   Rails.application.routes.draw do
+  resources :user_providers
   
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  
+  
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
   get 'uploads/create'
   post 'uploads' => 'uploads#create'
   resources :regions
@@ -13,7 +17,7 @@
   resources :searches
 
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
-    resources :deals do
+    resources :deals, :regions, :categories, :payments, :route do
       resources :questions, only: [:create, :destroy, :update]  
     end
     match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), via: :get
@@ -27,10 +31,14 @@
   end
  get 'welcome/index'
  root 'destinations#index'
+ get 'deals/index'
 
  get "/dashboard", to: "welcome#dashboard"
 
  put "/destinations/:id/publish", to: "destinations#publish"
+
+  get "/sales", to: "welcome#sales"
+  get "/followup", to: "welcome#followup"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

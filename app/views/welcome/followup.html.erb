@@ -1,0 +1,43 @@
+<div class="centerforms">
+<h1>
+  <i class="fa fa-shopping-cart"></i>
+  Follow Up
+</h1>
+
+  <% @sales.each do |user| %>
+    
+<table style="width: 80%">
+  <tr>
+  <% user.payments.where(state:1).each do |payment| %>
+    <th>
+           
+
+    <%if payment.user.name.blank? %>
+        <th>
+          <%= payment.user.first_name%> &nbsp <span><%= payment.user.last_name%></span>
+        </th>
+       
+    <% else %>
+        <%=  payment.user.name %>
+        <% end %>
+   </th>
+   
+    
+    <th><%= payment.deal.place%>
+    </th>
+    <th><%= payment.daterange%>
+    </th>
+
+    </th>
+    <th><%= payment.quantity%>
+    </th>
+    <th><%= payment.user.email%></th>
+    
+  </tr>
+   <% end -%>   
+  
+
+</table>
+
+<%end%>    
+</div>

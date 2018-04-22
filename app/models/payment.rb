@@ -5,6 +5,7 @@ class Payment < ApplicationRecord
   validates :user_id, presence: true
   before_save :default_values
 
+
   private
 
   def default_values
@@ -13,4 +14,3 @@ class Payment < ApplicationRecord
 
 
 end
-

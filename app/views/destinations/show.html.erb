@@ -24,38 +24,35 @@
     <li><a href="#tabs-7"><%= t ".drink" %></a></li>
     <li><a href="#tabs-8"><%= t ".shop" %></a></li>
     <li><a href="#tabs-9"><%= t ".sightseeing" %></a></li>
-    <li><a href="#tabs-10"><%= t ".filter" %></a></li>
   </ul>
   <div id="tabs-1">
-    <%= @destination.why_go.html_safe  %>
+    <%= @destination.why_go.html_safe?  %>
   </div>
   <div id="tabs-2">
-    <%= @destination.to_do.html_safe %>
+    <%= @destination.to_do.html_safe? %>
   </div>
   <div id="tabs-3">
-    <%= @destination.sights.html_safe %>
+    <%= @destination.sights.html_safe? %>
   </div>
   <div id="tabs-4">
-      <%= @destination.festivals.html_safe %>
+      <%= @destination.festivals.html_safe? %>
   </div>
   <div id="tabs-5">
-     <%= @destination.sleep.html_safe %>
+     <%= @destination.sleep.html_safe? %>
   </div>
   <div id="tabs-6">
-    <%= @destination.eat.html_safe %>
+    <%= @destination.eat.html_safe? %>
   </div>
   <div id="tabs-7">
-    <%= @destination.drink.html_safe %>
+    <%= @destination.drink.html_safe? %>
   </div>
   <div id="tabs-8">
-    <%= @destination.shop.html_safe %>
+    <%= @destination.shop.html_safe? %>
   </div>
   <div id="tabs-9">
-    <%= @destination.around.html_safe %>
+    <%= @destination.around.html_safe? %>
   </div>
-  <div id="tabs-10">
-    <%= @destination.filter %>
-  </div>
+ 
 
 </div> <!-- end of tabs -->
 </div>
@@ -64,11 +61,10 @@
       
       <h1><%= t ".HotDeals" %></h1>
       <div class="content">
-                
-        
+      
         <div class="gridd">
         <% @destination.deals.each do |deal| %>
-          <figure class="effect-zoe">
+          <figure class="effect-zoe ">
             <div class="deal-info">
               
               <div class="row name-deal">
@@ -89,21 +85,37 @@
               </div>
 
             </div>
-            <%= image_tag deal.pic.url() %>
+            <%= link_to image_tag(deal.pic.url()), deal_path %>
+            
             
             <figcaption>
-              <h3><%= link_to deal.place, deal_path %></h3>
-              <div class="description"><%= deal.description.html_safe %></div>
+              <h3>
+                <%= link_to deal.place, deal_path %>
+              </h3>
+
+
+             
+          
+              <div class="description">
+                <p>
+                  <%=link_to truncate(deal.details.html_safe, length:90), deal_path %>
+                </p>
+                <p>
+                  <%=link_to "read more...", deal%>
+                </p>
+              </div>
               <p class="icon-links">
                   <%= link_to '<i class="fa fa-eye"></i>'.html_safe, deal_path(deal) %>
-                  <a href=""><i class="fa fa-list-alt" alt="Fees and Policies" aria-hidden="true"></i></a>
+                    
+                  
+                 
+ 
               </p>
               
             </figcaption>     
           </figure>
           
-<%= link_to 'Edit', edit_destination_path(@destination) %> |
-<%= link_to 'Back', destinations_path %>
+
           <%end%>
 
 
@@ -114,25 +126,37 @@
       
     </div><!-- /container --> 
 
-<div class="field">
-  <h3><%= t ".Comments" %></h3>
+    <div class="field">
+      <h3><%= t ".Comments" %></h3>
 
-<ul>
-    <% @destination.comments.each do |comment| %>
-    <li>
-    <%= comment.body %>
-    </li>
-  <% end %>
-  </ul>
-  <%= render "comments/form" %>
+         <div class="panel-body">      
+            <% @destination.comments.each do |comment| %>
+            <div class="media">
+              <div class="media-left">
+               <%= image_tag "avatar.jpeg", :alt => "", :class => "media-object avatar-rupgo-question_deal" %>
+              </div>
+            <div class="media-body">
+              <h4 class="media-heading"><%= t ".Comments" %></h4>
+                <%= comment.body %>
+
+          </div>
+    </div>
+  <% end %> 
+</div>
+
+
+<%= render "comments/form" %>
 </div>
 </div>
+
 <script>
+
+
+
     $( function() {
     $( "#tabs" ).tabs();
   } );
 
 </script>
-
 
 

@@ -1,10 +1,14 @@
 class PaymentsController < ApplicationController
 	before_action :authenticate_user!
 
+def index
+end
 	def create
-		@payment = current_user.payments.new(deal_params)
+		payment = current_user.payments.new(deal_params)
 		respond_to do |format|
-			if @payment.save
+			if payment.save
+				payment.total = payment.deal.price * payment.quantity
+				payment.save
 				format.html { redirect_to route_path }
 				format.json {head :no_content }
 			else
@@ -16,11 +20,10 @@ end
 
 	def route
 		@payments = current_user.payments.where(state:1)
-		
 	end
 
 	#def quantity
-		#@payments = current_user.payments.find.last.quantity
+		#@payments = current_user.payments.find.last.quantity.
 	#end
 
 	def buys
@@ -37,6 +40,9 @@ def destroy
    redirect_to route_path
 end
 
+def edit
+end
+
  #def destroy
     #@payments = current_user.payments.where(state: '1').take
     #@payments.destroy
@@ -44,7 +50,7 @@ end
   #end
 
 			
-# aqui finaliza la accion de remover
+# aqui finaliza la accion de remover.
 
 
 	def express
@@ -62,7 +68,7 @@ end
 	private
 
 	def deal_params
-		params.require(:payment).permit(:deal_id, :check_in, :check_out, :quantity)
+		params.require(:payment).permit(:deal_id, :check_in, :check_out, :quantity, :daterange)
 	end
 
 end

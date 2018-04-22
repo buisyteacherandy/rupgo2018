@@ -20,6 +20,8 @@
 //= require summernote/locales/ko-KR
 //= require turbolinks
 //= require bootstrap-datepicker
+//= require moment
+//= require daterangepicker
 //= require_tree .
 
 
