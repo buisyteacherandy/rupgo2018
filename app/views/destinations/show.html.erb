@@ -1,6 +1,6 @@
 <div class="container destine-container">
   <div id="destine">
-     
+
   
 
   <div class="field destineimg">
@@ -13,49 +13,64 @@
   </div>
 
 
-<div id="tabs">
-  <ul>
-    <li><a href="#tabs-1"><%= t ".why_go" %></a></li>
-    <li><a href="#tabs-2"><%= t ".to_do" %></a></li>
-    <li><a href="#tabs-3"><%= t ".sights" %></a></li>
-    <li><a href="#tabs-4"><%= t ".festivals" %></a></li>
-    <li><a href="#tabs-5"><%= t ".sleep" %></a></li>
-    <li><a href="#tabs-6"><%= t ".eat" %></a></li>
-    <li><a href="#tabs-7"><%= t ".drink" %></a></li>
-    <li><a href="#tabs-8"><%= t ".shop" %></a></li>
-    <li><a href="#tabs-9"><%= t ".sightseeing" %></a></li>
-  </ul>
-  <div id="tabs-1">
-    <%= @destination.why_go.html_safe  %>
-  </div>
-  <div id="tabs-2">
-    <%= @destination.to_do.html_safe %>
-  </div>
-  <div id="tabs-3">
-    <%= @destination.sights.html_safe %>
-  </div>
-  <div id="tabs-4">
-      <%= @destination.festivals.html_safe %>
-  </div>
-  <div id="tabs-5">
-     <%= @destination.sleep.html_safe %>
-  </div>
-  <div id="tabs-6">
-    <%= @destination.eat.html_safe %>
-  </div>
-  <div id="tabs-7">
-    <%= @destination.drink.html_safe %>
-  </div>
-  <div id="tabs-8">
-    <%= @destination.shop.html_safe %>
-  </div>
-  <div id="tabs-9">
-    <%= @destination.around.html_safe %>
-  </div>
- 
 
-</div> <!-- end of tabs -->
 </div>
+
+<section>
+        <div class="tabs tabs-style-fillup">
+          <nav>
+            <ul>
+              <li><a href="#section-fillup-1" class="icon icon-home"><span><%= t ".why_go" %></span></a></li>
+              <li><a href="#section-fillup-2" class="icon icon-gift"><span><%= t ".to_do" %></span></a></li>
+              <li><a href="#section-fillup-3" class="icon icon-upload"><span><%= t ".sights" %></span></a></li>
+              <li><a href="#section-fillup-4" class="icon icon-coffee"><span><%= t ".festivals" %></span></a></li>
+              <li><a href="#section-fillup-5" class="icon icon-config"><span><%= t ".sleep" %></span></a></li>
+              <li><a href="#section-fillup-6" class="icon icon-config"><span><%= t ".eat" %></span></a></li>
+              <li><a href="#section-fillup-7" class="icon icon-config"><span><%= t ".drink" %></span></a></li>
+              <li><a href="#section-fillup-8" class="icon icon-config"><span><%= t ".shop" %></span></a></li>
+              <li><a href="#section-fillup-9" class="icon icon-config"><span><%= t ".sightseeing" %></span></a></li>
+            </ul>
+          </nav>
+          <div class="content-wrap">
+            <section id="section-fillup-1">
+              <%= @destination.why_go.html_safe  %>
+            </section>
+            <section id="section-fillup-2">
+              <%= @destination.to_do.html_safe %>
+            </section>
+            <section id="section-fillup-3">
+              <%= @destination.sights.html_safe %>
+
+            </section>
+            <section id="section-fillup-4">
+              <%= @destination.festivals.html_safe %>
+
+            </section>
+            <section id="section-fillup-5">
+               <%= @destination.sleep.html_safe %>
+
+            </section>
+            <section id="section-fillup-6">
+              <%= @destination.eat.html_safe %>
+
+            </section>
+            <section id="section-fillup-7">
+              <%= @destination.drink.html_safe %>
+
+            </section>
+            <section id="section-fillup-8">
+              <%= @destination.shop.html_safe %>
+
+            </section>
+            <section id="section-fillup-9">
+              <%= @destination.around.html_safe %>
+
+            </section>
+          </div><!-- /content -->
+        </div><!-- /tabs -->
+      </section>      
+
+<hr class="style-two">
 
 <div class="container-fluid nested-deals">
       
@@ -149,14 +164,31 @@
 </div>
 </div>
 
-<script>
+
+<% if signed_in? && current_user.is_admin? %>
+
+<button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_destination_path(@destination), :target => "_self" %></button>
 
 
+<% else %>
+<div class="nothing"></div>
+<% end %>
 
-    $( function() {
-    $( "#tabs" ).tabs();
-  } );
 
-</script>
+<!-- load tabs -->
+<script src="js/cbpFWTabs.js"></script>
+    <script>
+      (function() {
+
+        [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+          new CBPFWTabs( el );
+        });
+
+      })();
+    </script>
+
+<!-- End load tabs -->
+
+
 
 

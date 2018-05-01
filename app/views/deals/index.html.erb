@@ -46,13 +46,6 @@ $('.owl-carousel').owlCarousel({
 </script> -->
 
 <hr class="style-two">
-<% if signed_in? && current_user.is_admin? %>
-            
-            <button type="button" class="btn btn-warning"><%= link_to 'New Deal', new_deal_path %></button>
-            
-          
-               <% else %>
-          <div class="nothing"></div>
-            <% end %>
+
 
 </div>

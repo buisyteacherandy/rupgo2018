@@ -19,6 +19,24 @@
               <li><%= link_to (t ".Close_session"), destroy_user_session_path, method: :delete %></li>
             </ul>
           </div>
+              <% if signed_in? && current_user.is_admin? %>
+          <div class="link-list">
+            <h3>Admin Area</h3>
+            <ul>
+              
+              <li><%= link_to'DESTINATIONS DASHBOARD', dashboard_path, :target => "_self" %></li>
+              <li><%= link_to 'CLIENTS DASHBOARD', followup_path, :target => "_self" %></li>
+              <li><%= link_to 'SALES DASHBOARD', sales_path, :target => "_self" %></li>
+              <li><%= link_to'NEW DESTINATION?', new_destination_path, :target => "_self" %></li>
+              <li><%= link_to'NEW DEAL?', new_deal_path, :target => "_self" %></li>
+            </ul>
+          </div>
+              
+              <% else %>
+              <div class="nothing">
+                  
+              </div>
+              <% end %>
             <% else %>
           <div class="link-list">
             <ul>
@@ -28,7 +46,7 @@
               <li><%= link_to (t ".Create_account"), new_user_registration_path %></li>
             </ul>
           </div>
-              
+
             
                    
           <div class="icon-list">

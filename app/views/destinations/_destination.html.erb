@@ -15,8 +15,18 @@
 
 
             </figcaption>
+
           </figure>
+          <% if signed_in? && current_user.is_admin? %>
+            
+            <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_destination_path(destination) %></button>
+            <button type="button" class="btn btn-danger"><%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+          
+               <% else %>
+          <div class="nothing"></div>
+            <% end %>
         </li>
       </ul>
+      
 </div><!-- /container -->
 
