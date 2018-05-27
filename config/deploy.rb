@@ -1,14 +1,14 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.2"
 
-set :application, "rupgo_deploy"
+set :application, "rupgo2018"
 set :repo_url, "git@github.com:buisyteacherandy/rupgo2018.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/deploy/rupgo_deploy"
+set :deploy_to, "/home/deploy/rupgo2018"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

@@ -304,7 +304,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   paperclip
-  pg (~> 0.18)
+  pg (~> 0.21.0)
   pry
   puma (~> 3.0)
   rails (~> 5.0.1)
@@ -322,4 +322,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.16.0
+   1.16.2

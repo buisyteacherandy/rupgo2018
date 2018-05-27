@@ -9,8 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
-gem "pg", "~> 0.18"
-
+gem "pg", '~> 0.21.0'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -28,10 +27,10 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Adding bootstap
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-gem 'font-awesome-rails'  
+gem 'font-awesome-rails'
 gem 'feathericon-sass'
 gem 'simple_form'
-gem 'summernote-rails', '~> 0.8.3.0' 
+gem 'summernote-rails', '~> 0.8.3.0'
 gem 'codemirror-rails'
 gem 'bootstrap-datepicker-rails'
 # Omniauth istallation
