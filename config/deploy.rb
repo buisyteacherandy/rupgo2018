@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.8.0'
+lock "~> 3.10.2"
 
 set :application, 'rupgo2018'
 set :repo_url, 'git@github.com:buisyteacherandy/rupgo2018.git'
