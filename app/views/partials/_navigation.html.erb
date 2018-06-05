@@ -2,16 +2,16 @@
   <div class="container">
     <div class="menu-wrap">
         <nav class="menu">
-          <% if user_signed_in? %>           
+          <% if user_signed_in? %>
           <div class="profile">
-            
-            
+
+
             <img src="" alt=""/>
             <span>
               <%= current_user.first_name  %></span>&nbsp<span><%= current_user.last_name  %>
             </span>
           </div>
-          
+
           <div class="link-list">
             <ul>
               <li><%= link_to (t ".My_routes"), buys_path %></li>
@@ -23,7 +23,7 @@
           <div class="link-list">
             <h3>Admin Area</h3>
             <ul>
-              
+
               <li><%= link_to'DESTINATIONS DASHBOARD', dashboard_path, :target => "_self" %></li>
               <li><%= link_to 'CLIENTS DASHBOARD', followup_path, :target => "_self" %></li>
               <li><%= link_to 'SALES DASHBOARD', sales_path, :target => "_self" %></li>
@@ -31,29 +31,29 @@
               <li><%= link_to'NEW DEAL?', new_deal_path, :target => "_self" %></li>
             </ul>
           </div>
-              
+
               <% else %>
               <div class="nothing">
-                  
+
               </div>
               <% end %>
             <% else %>
           <div class="link-list">
             <ul>
               <li><%= link_to (t ".Sign_in"), new_user_session_path %></li>
-              <li><%= link_to (t ".Sign_in_Facebook"), user_omniauth_authorize_path(:facebook) %></li>
+              <li><%= link_to (t ".Sign_in_Facebook"), user_facebook_omniauth_authorize_path(:facebook) %></li>
               <li><%= link_to (t ".Sign_in_Google"), user_google_oauth2_omniauth_authorize_path %></li>
               <li><%= link_to (t ".Create_account"), new_user_registration_path %></li>
             </ul>
           </div>
 
-            
-                   
+
+
           <div class="icon-list">
             <%= link_to '<i class="fa fa-fw fa-home"></i>'.html_safe, destinations_path %>
-        
-            
-            
+
+
+
           </div>
 
           <% end %>
@@ -70,7 +70,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          
+
           <%= link_to image_tag("marca.png"), destinations_path, :class=>"navbar-brand" %>
         </div> <!-- navbar-header -->
 
@@ -83,14 +83,14 @@
             <li class="itnav cart_icon">
             <%= link_to (t ".my_cart"), route_path %></li>
             <% end -%>
-            <li class="itnav"> 
-            <span> <%= link_to_unless_current image_tag("en.png"),:class => "active-en", locale: "en" %> </span> 
+            <li class="itnav">
+            <span> <%= link_to_unless_current image_tag("en.png"),:class => "active-en", locale: "en" %> </span>
             <span><%= link_to_unless_current image_tag("es.png"),:class => "active-es", locale: "es" %></span></li>
-            
+
           </ul>
         </div><!-- /.navbar-collapse -->
         <div id="mega_menu" class="no-list">
-          <div class="row">  
+          <div class="row">
             <div id="colombia-map" class="col-sm-3 col-md-3 ">
                 <ul>
                   <li> <%= image_tag "and.png", :alt => "", :class => "filter img-responsive and" %></li>
@@ -107,7 +107,7 @@
               <h3><%= t ".Visit" %></h3>
               <ul>
               <%= content_tag_for(:li, @regions) do |region| %>
-              <%= link_to region.name,region %> 
+              <%= link_to region.name,region %>
               <% end %>
               </ul>
             </div><!-- regions -->
@@ -120,26 +120,26 @@
 
               <br>
               <ul>
-                <% @categories.each do  |category| %> 
+                <% @categories.each do  |category| %>
                 <li class="col-xs-12 col-md-4 sm-4 category">
-                      
-                  <%= link_to category.name,category, :class=>"categories_button"%> 
+
+                  <%= link_to category.name,category, :class=>"categories_button"%>
                   <div class="categories_cover">
                   <%= link_to category do %>
                   <%= image_tag category.catecover.url() %>
                   <% end %>
-                  
+
                   </div>
-                </li> 
+                </li>
                 <% end -%>
               </ul>
             </div> <!-- end categories -->
-        
+
           </div> <!-- row -->
         <!-- <div class="row bottom"> Active este cuando tenga contenido para msotrar debajo de el menu desplegable de este Megamenu -->
-          
+
         </div>
-      
+
     </div> <!-- mega menu -->
     </div><!-- container-fluid -->
   </nav>
@@ -155,11 +155,11 @@
  <script>
       $(document).ready(function(){
       $("#mega_menu").hide();
-      
+
       $(".sign").mouseenter(function(){
       $(".signed").slideToggle("fast");
       $("#mega_menu").slideUp("fast");
-        
+
           });
 
       $(".sign").mouseleave(function(){
@@ -169,32 +169,32 @@
 
       $("#colombia").mouseenter(function(){
       $("#mega_menu").slideToggle("fast");
-      
+
           });
-  
+
       $("#colombia").click(function(){
       $("#mega_menu").slideDown("fast");
-      
+
           });
-      
+
       $(".outmega").click(function(){
       $("#mega_menu").slideUp("fast");
           });
-      
+
       $("#mega_menu").mouseleave(function(){
       $("#mega_menu").slideUp("fast");
           });
-   
+
       });
   </script>
- 
+
   <!--End Of Roll Down Mega Menu script -->
 
 <!-- Map Script -->
 
-  <script> 
+  <script>
     $(document).ready(function () {
-  
+
 // Amazonas
   $("#region_1 > a").mouseenter(function(){
     $(".amaz").toggleClass("dropshadow", 0, "filter" )
@@ -319,6 +319,6 @@ $(function () {
 
 })();
   </script>
-     
+
   </div><!-- End of Map Script -->
 </header>
