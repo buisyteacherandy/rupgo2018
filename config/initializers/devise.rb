@@ -7,7 +7,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  #config.secret_key = '64943d77924b5bdfe6006b041772fa4385d782422a0000f5677fd0fa893513b0a5d2f17f73e33bec2ecbaaf575e01fedea9a402babe011c27c80f9a17d1f8d47'
+  config.secret_key = '64943d77924b5bdfe6006b041772fa4385d782422a0000f5677fd0fa893513b0a5d2f17f73e33bec2ecbaaf575e01fedea9a402babe011c27c80f9a17d1f8d47'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -17,10 +17,10 @@ Devise.setup do |config|
 
   #config.omniauth :twitter, 'APP_ID', 'APP_SECRET'
 
-  config.omniauth :facebook, '187728001765320', '57bedd99be03238e0d21ef97008a1931' , 
+  config.omniauth :facebook, '187728001765320', '57bedd99be03238e0d21ef97008a1931' ,
   {:scope => 'publish_stream,email,offline_access,manage_pages'}
 
-  config.omniauth :google_oauth2, '149989833633-cit95b5r6n8bg3sn7jsi806notehdqib.apps.googleusercontent.com', 'N5taOudwbyAMc6NKWCduhdTU' 
+  config.omniauth :google_oauth2, '149989833633-cit95b5r6n8bg3sn7jsi806notehdqib.apps.googleusercontent.com', 'N5taOudwbyAMc6NKWCduhdTU'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
