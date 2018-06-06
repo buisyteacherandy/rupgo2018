@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "~> 3.10.2"
 
-set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa) }
+
 set :application, 'rupgo2018'
 set :repo_url, 'git@github.com:buisyteacherandy/rupgo2018.git'
 set :branch, :master
