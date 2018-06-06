@@ -83,3 +83,4 @@ namespace :deploy do
 end
 
 set :default_env, { "SECRET_KEY_BASE" => "XXXX", "RUPGO_DATABASE_PASSWORD" => "rupgo_password" }
+set :ssh_options, { forward_agent: true, paranoid: true, keys: "~/.ssh/id_rsa" }
