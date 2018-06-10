@@ -1,6 +1,7 @@
 # config valid only for current version of Capistrano
 lock "~> 3.10.2"
 
+
 set :application, 'rupgo2018'
 set :repo_url, 'git@github.com:buisyteacherandy/rupgo2018.git'
 set :branch, :master
@@ -82,3 +83,4 @@ namespace :deploy do
 end
 
 set :default_env, { "SECRET_KEY_BASE" => "XXXX", "RUPGO_DATABASE_PASSWORD" => "rupgo_password" }
+
