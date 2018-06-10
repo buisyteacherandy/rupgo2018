@@ -3,7 +3,7 @@ set :stage, :production
 
 # server 'ec2-18-222-63-160.us-east-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app web db}
 
-server 'ec2-18-222-63-160.us-east-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}, ssh_options: {user:'ubuntu', keys: %w(~/.ssh/rupgo_deployment.pem), forward_agent: true}
+server 'ec2-52-15-51-68.us-east-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}, ssh_options: {user:'ubuntu', keys: %w(~/.ssh/rupgo_server_new.pem), forward_agent: true}
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
