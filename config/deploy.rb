@@ -2,11 +2,11 @@
 lock "~> 3.10.2"
 
 
-set :application, 'rupgo2018'
+set :application, 'rupgo'
 set :repo_url, 'git@github.com:buisyteacherandy/rupgo2018.git'
 set :branch, :master
-set :deploy_to, '/home/ubuntu/rupgo2018'
-set :tmp_dir, "/home/ubuntu/tmp"
+set :deploy_to, '/home/deploy/rupgo'
+set :tmp_dir, "/home/deploy/tmp"
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}

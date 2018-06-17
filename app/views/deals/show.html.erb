@@ -64,7 +64,7 @@
               
             </div> <!-- item -->
             <div class="item">
-              <%= @deal.video_deal.html_safe %>
+              <%= @deal.video_deal.html_safe? %>
             </div>
 
           </div><!--  owl theme -->
@@ -117,7 +117,7 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-        <%= @deal.description.html_safe?  %>
+        <%= @deal.description.html_safe  %>
       </div>
     </div>
   </div>
