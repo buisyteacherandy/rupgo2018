@@ -1,15 +1,15 @@
 class Destination < ApplicationRecord
 	include AASM
 	translates :place, :why_go, :to_do, :sights, :festivals, :sleep, :eat, :drink, :shop, :around
-	has_many :deals, dependent: :destroy
-	has_many :comments, dependent: :destroy
-	has_many :has_regions
-  	has_many :regions, through: :has_regions
+	has_many :deals, dependent: :nullify
+	has_many :comments, dependent: :nullify
+	has_many :has_regions, dependent: :nullify
+  	has_many :regions, through: :has_regions, dependent: :nullify
 	belongs_to :user
 	
 
-	has_many :has_categories
-	has_many :categories, through: :has_categories
+	has_many :has_categories, dependent: :nullify
+	has_many :categories, through: :has_categories, dependent: :nullify
 
 	validates :place, presence: true, uniqueness: true
 	validates :why_go, presence: true

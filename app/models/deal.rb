@@ -2,15 +2,15 @@ class Deal < ApplicationRecord
   translates :place, :description, :details, :other_details, :policies_and_fees, :price
   belongs_to :user
   belongs_to :destination
-  has_many :questions, dependent: :destroy
+  has_many :questions, dependent: :nullify
 
   #has_many :has_regions
   #has_many :regions, through: :has_regions
 
-  has_many :has_packages
-  has_many :destinations, through: :has_packages
+  has_many :has_packages, dependent: :nullify
+  has_many :destinations, through: :has_packages, dependent: :nullify
 
-  has_many :payments
+  has_many :payments, dependent: :delete_all
   validates :place, presence: true, uniqueness: true
   #after_create :save_regions
   before_save :default_price

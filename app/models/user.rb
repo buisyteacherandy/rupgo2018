@@ -7,14 +7,14 @@ class User < ApplicationRecord
 
 
  
-  has_many :user_providers, :dependent => :destroy
+  has_many :user_providers, dependent: :nullify
   
-  has_many :destinations
-  has_many :deals, through: :payments
-  has_many :payments
-  has_many :transactions
-  has_many :questions, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :destinations, dependent: :nullify
+  has_many :deals, through: :payments, dependent: :delete_all
+  has_many :payments, dependent: :delete_all
+  has_many :transactions, dependent: :delete_all
+  has_many :questions, dependent: :nullify
+  has_many :comments, dependent: :nullify
 
 def self.from_omniauth(auth)
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
