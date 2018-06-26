@@ -526,19 +526,19 @@ h1{
 
 
 
-// Styles footer
+/** Styles footer **/
 
-// static version
+/** static version **/
 footer{
-	background-image: url(footerbk.jpg);
-	background-size: cover;
-	background-position: fixed !important;
-	padding: 25px 0 0 0;
+	
+	padding: 0;
 	position: fixed bottom;
+	margin: 0;
 	width: 100%;
 	-moz-box-shadow:    inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow:         inset 0 0 10px #000000;
+    
 }
 
 
@@ -546,19 +546,53 @@ footer a{
 	text-decoration: none;
 	color: white !important
 }
+.main_wrap{
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
+	padding: 0 !important;
+	margin: 0 0 0 0 ;
+	overflow: hidden;
+	height: 500px;
+}
 .container-footer{
 			
-	width: 90% !important;
+	width: 100% !important;
+	
+	position: relative;
+	padding: 15px 0 5px 0 !important;
+	margin: 0 0 0 0 ;
+	
+
+	
 	
 }
 .container-footer .col-md-6, .col-md-3{
 	color: white;
 
 }
+.img_back	{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	z-index: -20;
+	
+
+
+
+
+
+
+}
+
+
 
 .main-rows{
-	width: 100%;
+	width: 90%;
 	margin: 0 auto !important;
+	margin-top: 10px
+
 	 
 }
 .social-row{
