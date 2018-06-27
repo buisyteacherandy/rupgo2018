@@ -32,6 +32,7 @@ gem 'feathericon-sass'
 gem 'simple_form'
 gem 'summernote-rails', '~> 0.8.3.0'
 gem 'codemirror-rails'
+gem 'jquery-turbolinks'
 gem 'bootstrap-datepicker-rails'
 # Omniauth istallation
 gem 'omniauth'
