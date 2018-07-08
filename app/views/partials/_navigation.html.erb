@@ -7,6 +7,7 @@
 
 
             <img src="" alt=""/>
+            <span><i class="fa fa-users"></i></span>
             <span>
               <%= current_user.first_name  %></span>&nbsp<span><%= current_user.last_name  %>
             </span>
@@ -29,6 +30,7 @@
               <li><%= link_to 'SALES DASHBOARD', sales_path, :target => "_self" %></li>
               <li><%= link_to'NEW DESTINATION?', new_destination_path, :target => "_self" %></li>
               <li><%= link_to'NEW DEAL?', new_deal_path, :target => "_self" %></li>
+              <li><%= link_to 'CAROUSEL FOR FIRST TIME', new_carousel_path, :target => "_self" %></li>
             </ul>
           </div>
 

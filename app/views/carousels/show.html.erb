@@ -1,0 +1,19 @@
+<% if signed_in? && current_user.is_admin? %>
+<p id="notice"><%= notice %></p>
+
+<p>
+ <strong>Body:</strong>
+    <%= image_tag @carousel.carouselpic.url() %>
+    <%= image_tag @carousel.carouselpic1.url() %>
+    <%= image_tag @carousel.carouselpic2.url() %>
+    <%= image_tag @carousel.carouselpic3.url() %>
+
+
+</p>
+
+<%= link_to 'Edit', edit_carousel_path(@carousel) %> |
+<%= link_to 'Back', carousels_path %>
+
+<%else%>
+<div class="nothing"></div>
+<%end%>

@@ -1,0 +1,42 @@
+<div class="centerforms">
+<% if signed_in? && current_user.is_admin? %>
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Carousels</h1>
+
+<table>
+ <thead>
+   <tr>
+     <th>Body</th>
+     <th colspan="3"></th>
+   </tr>
+ </thead>
+
+ <tbody>
+   <% @carousels.each do |carousel| %>
+     <tr>
+       <td><%= carousel.body %></td>
+       <td><%= image_tag carousel.carouselpic.url(), :class => "carouselindeximages" %></td>
+       <td><%= image_tag carousel.carouselpic1.url(), :class => "carouselindeximages" %></td>
+       <td><%= image_tag carousel.carouselpic2.url(), :class => "carouselindeximages" %></td>
+       <td><%= image_tag carousel.carouselpic3.url(), :class => "carouselindeximages" %></td>
+       <td><%= link_to 'Show', carousel %></td>
+       <td><%= link_to 'Edit', edit_carousel_path(carousel) %></td>
+       <td><%= link_to 'Destroy', carousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carousel', new_carousel_path %>
+<%else%>
+<div class="nothing"></div>
+<%end%>
+
+</div>

@@ -32,8 +32,6 @@
 //= require codemirror/modes/yaml
 //= require codemirror/modes/slim
 //= require codemirror/modes/php
-//= require summernote
-//= require summernote/locales/ko-KR
 //= require turbolinks
 //= require bootstrap-datepicker
 //= require moment

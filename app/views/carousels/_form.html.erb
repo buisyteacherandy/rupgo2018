@@ -1,0 +1,25 @@
+<%= simple_form_for(@carousel) do |f| %>
+	<div class="centerforms">
+	 <%= f.error_notification %>
+
+	 <div class="form-inputs">
+	   <%= f.input :body %>
+	 </div>
+	 
+
+
+	 
+	   Imagen 1: <%= f.file_field :carouselpic %>
+
+	   Imagen 2: <%= f.file_field :carouselpic1 %>
+	 
+	   Imagen 3: <%= f.file_field :carouselpic2 %>
+	 
+	   Imagen 4: <%= f.file_field :carouselpic3 %>
+	 
+
+	 <div class="form-actions">
+	   <%= f.button :submit %>
+	 </div>
+	<% end %>
+</div>

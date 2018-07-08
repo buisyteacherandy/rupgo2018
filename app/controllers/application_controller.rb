@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_action :set_categories
   before_action :set_regions
+  before_action :set_carousels
   
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -38,5 +39,9 @@ class ApplicationController < ActionController::Base
   def set_regions
     @regions = Region.all
   end
+
+  def set_carousels
+   @carousels = Carousel.all
+ end
 
 end

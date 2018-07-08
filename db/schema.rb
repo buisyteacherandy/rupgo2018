@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180428233728) do
+ActiveRecord::Schema.define(version: 20180708000901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carousel_translations", force: :cascade do |t|
+    t.integer  "carousel_id",  null: false
+    t.string   "locale",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.text     "body"
+    t.integer  "carouselpic"
+    t.integer  "carouselpic1"
+    t.integer  "carouselpic2"
+    t.integer  "carouselpic3"
+    t.index ["carousel_id"], name: "index_carousel_translations_on_carousel_id", using: :btree
+    t.index ["locale"], name: "index_carousel_translations_on_locale", using: :btree
+  end
+
+  create_table "carousels", force: :cascade do |t|
+    t.text     "body"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "carouselpic_file_name"
+    t.string   "carouselpic_content_type"
+    t.integer  "carouselpic_file_size"
+    t.datetime "carouselpic_updated_at"
+    t.string   "carouselpic1_file_name"
+    t.string   "carouselpic1_content_type"
+    t.integer  "carouselpic1_file_size"
+    t.datetime "carouselpic1_updated_at"
+    t.string   "carouselpic2_file_name"
+    t.string   "carouselpic2_content_type"
+    t.integer  "carouselpic2_file_size"
+    t.datetime "carouselpic2_updated_at"
+    t.string   "carouselpic3_file_name"
+    t.string   "carouselpic3_content_type"
+    t.integer  "carouselpic3_file_size"
+    t.datetime "carouselpic3_updated_at"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"

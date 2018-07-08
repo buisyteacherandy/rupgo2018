@@ -27,6 +27,10 @@ class DestinationsController < ApplicationController
     @regions = Region.all
   end
 
+  def set_carousels
+   @carousels = Carousel.all
+  end
+
   # GET /destinations/1/edit
   def edit
   end
@@ -37,6 +41,7 @@ class DestinationsController < ApplicationController
     @destination = current_user.destinations.new(destination_params)
     @destination.categories = params[:categories]
     @destination.regions = params[:regions]
+    
     
 
     respond_to do |format|

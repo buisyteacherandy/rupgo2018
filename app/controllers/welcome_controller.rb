@@ -18,4 +18,16 @@ before_action :authenticate_admin!, only: [:dashboard, :sales, :followup]
     @payments = Payment.all
     #@payments_provider = User_provider.all 
   end
+
+  def about
+
+  end
+
+  def privacy
+
+  end
+
+  def terms
+
+  end
 end

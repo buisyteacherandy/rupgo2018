@@ -1,0 +1,38 @@
+
+<div class="centerforms">
+<h1>
+  <i class="fa fa-envelope"></i>
+  Contact us
+</h1>
+
+	<div class="field">
+		<%= form_for @contact do |f| %>
+		<%= f.label :name %><br />
+	    <%= f.text_field :name, required: true %>
+	</div>
+
+	<br>
+
+	<div class="field">
+	    <%= f.label :email %><br />
+	    <%= f.email_field :email, required: true %>
+	</div>
+
+	<br>
+
+	<div class="field">
+	    <%= f.label :message %><br />
+	    <%= f.text_area :message, as: :text %>
+	</div>
+
+	<div class="hidden">
+	    <%= f.label :nickname %><br />
+	    <%= f.text_field :nickname, hint: 'leave this blank' %>
+	</div>
+
+	 <div class="actions">
+	      <%= f.submit 'Send Message', class: "button" %>
+	 </div>
+<% end -%>
+
+</div>

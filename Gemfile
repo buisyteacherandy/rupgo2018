@@ -30,10 +30,11 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-rails'
 gem 'feathericon-sass'
 gem 'simple_form'
-gem 'summernote-rails', '~> 0.8.3.0'
+#gem 'summernote-rails', '~> 0.8.3.0'
 gem 'codemirror-rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap-datepicker-rails'
+
 # Omniauth istallation
 gem 'omniauth'
 # middleware facebook
@@ -56,6 +57,7 @@ gem 'rails-erd'
 gem 'record_tag_helper', '~> 1.0'
 gem 'pry'
 gem 'omniauth-google-oauth2'
+gem 'mail_form', '~> 1.7', '>= 1.7.1'
 
 
 
@@ -76,7 +78,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.3', '>= 1.3.1'
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.3'
   gem 'capistrano-passenger', '~> 0.2.0'
-
+  gem 'figaro', '~> 1.1', '>= 1.1.1'
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
